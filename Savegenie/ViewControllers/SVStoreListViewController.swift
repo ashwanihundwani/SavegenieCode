@@ -73,9 +73,10 @@ class SVStoreListViewController: SVBaseViewController {
     var stores:SVStores? = nil;
     var shopCategory:SVShopCategory?
     var masterCategories:SVMasterCategories?
-    var proceedTapped:Bool = false
-    var fetchingCommonSlot:Bool = false
     var resultCounter:Int = 0
+    var commonSlot:SVCommonSlot? =  nil
+    var promos:SVDeals? = nil
+    var selectedStore:SVStore? = nil
     
     override func navBarConfig() -> SVNavBarConfig {
         
@@ -87,8 +88,10 @@ class SVStoreListViewController: SVBaseViewController {
         
         self.fetchBanners()
         self.fetchStores()
+        
         // Do any additional setup after loading the view.
     }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -264,13 +267,13 @@ extension SVStoreListViewController : UITableViewDelegate, UITableViewDataSource
             
             let store:SVStore = (stores?.stores![indexPath.row])!
             
-            SVVisitedStores.addStore(store)
+            self.selectedStore = store
             
-            self.proceedTapped = false
-            self.fetchingCommonSlot = false
+            SVVisitedStores.addStore(store)
             
             SVUtil.showLoader()
             self.fetchCategories(store)
+            self.fetchPromos(store)
             
             if SVVisitedStores.multipleStoresVisited() {
                 
@@ -292,29 +295,17 @@ extension SVStoreListViewController : SVMultipleStoreViewDelegate {
         
         SVJSONAppService.fetchMasterCategories(params, responsObjectKey: "") { (categories:SVMasterCategories?, error:NSError?) in
             
-            self.resultCounter = self.resultCounter + 1
             
             if let _ = categories {
                 
                 self.masterCategories = categories
-                
-                if self.proceedTapped == true || self.fetchingCommonSlot == false {
-                    
-                    SVUtil.hideLoader()
-                    let vc:SVHomeViewController = (SVUtil.getVCWithIdentifier("SVHomeViewController") as? SVHomeViewController)!
-                    
-                    vc.masterCategories = self.masterCategories
-                    vc.store = store
-                    
-                    self.navigationController?.pushViewController(vc, animated: false)
-                    
-                    
-                }
-                
             }
             else {
                 
             }
+            self.resultCounter = self.resultCounter + 1
+            
+            self.performActionBasedOnFetchedData()
             
             
         }
@@ -324,62 +315,90 @@ extension SVStoreListViewController : SVMultipleStoreViewDelegate {
         
         let params:Array<(key:String, value:AnyObject)> = [("data[store_id]", store.identifier!)]
         
-        SVJSONAppService.fetchPromos(params, responsObjectKey: "") { (promo:SVDeals?, error:NSError?) in
+        SVJSONAppService.fetchPromos(params, responsObjectKey: "") { (promos:SVDeals?, error:NSError?) in
             
+            if let _ = promos {
+                self.promos = promos
+            }
             self.resultCounter = self.resultCounter + 1
             
+            self.performActionBasedOnFetchedData()
             
         }
         
     }
     
-    private func fetchSponsorProducts(store:SVStore) {
-        
-        let params:Array<(key:String, value:AnyObject)> = [("data[store_id]", store.identifier!)]
-        
-        SVJSONAppService.fetchSponsoredProducts(<#T##params: Array<(key: String, value: AnyObject)>##Array<(key: String, value: AnyObject)>#>, responsObjectKey: <#T##String!#>, completionHandler: <#T##(SVCommonSlot?, NSError?) -> Void#>)(params, responsObjectKey: "") { (promo:SVDeals?, error:NSError?) in
-            
-            self.resultCounter = self.resultCounter + 1
-            
-            
-        }
-        
-    }
+//    private func fetchSponsorProducts(store:SVStore) {
+//        
+//        let params:Array<(key:String, value:AnyObject)> = [("data[store_id]", store.identifier!)]
+//        
+//        SVJSONAppService.fetchSponsoredProducts(params, responsObjectKey: "", completionHandler: { (SVSpon, <#NSError?#>) in
+//            <#code#>
+//        })(params, responsObjectKey: "") { (promo:SVDeals?, error:NSError?) in
+//            
+//            self.resultCounter = self.resultCounter + 1
+//            
+//            
+//        }
+//        
+//    }
     
     
     private func fetchCommonSlot(store:SVStore) {
-        
-        
-        
-        self.fetchingCommonSlot = true
+    
         let params:Array<(key:String, value:AnyObject)> = [("data[store_id]", store.identifier!)]
         
         
         SVJSONAppService.fetchCommonSlot(params, responsObjectKey: "") { (commonSlot:SVCommonSlot?, error:NSError?) in
             
-            self.resultCounter = self.resultCounter + 1
-            SVUtil.hideLoader()
             if let _ = commonSlot {
-                
-                let addressView:SVMultipleStoreView = (NSBundle.mainBundle().loadNibNamed("MultipleStoreView", owner: nil, options: nil).first as? SVMultipleStoreView)!
-                
-                addressView.store = store
-                
-                addressView.delegate = self
-                addressView.setDeliverySlot("Your estimated delivery slot would be from \(commonSlot!.date!) \(commonSlot!.slot!)")
-                
-                let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-                
-                addressView.frame = appDelegate.window!.bounds
-                
-                self.navigationController?.view.addSubview(addressView)
+
+                self.commonSlot = commonSlot;
                 
             }
             else {
                 
             }
+            self.resultCounter = self.resultCounter + 1
+            
+            self.performActionBasedOnFetchedData()
             
             
+        }
+    }
+    
+    private func performActionBasedOnFetchedData() {
+        // 3 will be 4 after sponsor products parsing
+        if SVVisitedStores.multipleStoresVisited() == true
+            && self.resultCounter == 3 {
+            
+            self.resultCounter = 0
+            SVUtil.hideLoader()
+            let addressView:SVMultipleStoreView = (NSBundle.mainBundle().loadNibNamed("MultipleStoreView", owner: nil, options: nil).first as? SVMultipleStoreView)!
+                        
+            addressView.delegate = self
+            addressView.setDeliverySlot("Your estimated delivery slot would be from \(commonSlot!.date!) \(commonSlot!.slot!)")
+            
+            let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            
+            addressView.frame = appDelegate.window!.bounds
+            
+            self.navigationController?.view.addSubview(addressView)
+            
+            
+        }
+            // 2 will be 3 after sponsor products parsing
+        else if (self.resultCounter == 2 && SVVisitedStores.multipleStoresVisited() == false) {
+            
+            SVUtil.hideLoader()
+            self.resultCounter = 0
+            let vc:SVHomeViewController = (SVUtil.getVCWithIdentifier("SVHomeViewController") as? SVHomeViewController)!
+            
+            vc.masterCategories = self.masterCategories
+            vc.store = self.selectedStore
+            vc.promos = self.promos
+            
+            self.navigationController?.pushViewController(vc, animated: false)
         }
     }
     
@@ -391,16 +410,17 @@ extension SVStoreListViewController : SVMultipleStoreViewDelegate {
             let vc:SVHomeViewController = (SVUtil.getVCWithIdentifier("SVHomeViewController") as? SVHomeViewController)!
             
             vc.masterCategories = masterCategories
-            vc.store = view.store
+            vc.promos = self.promos
+            vc.store = self.selectedStore
             
             self.navigationController?.pushViewController(vc, animated: false)
 
         }
         
-        self.proceedTapped = true
-        
         view.removeFromSuperview()
     }
+    
+    
 }
 
 

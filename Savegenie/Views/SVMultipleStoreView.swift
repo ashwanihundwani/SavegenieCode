@@ -20,7 +20,6 @@ class SVMultipleStoreView: UIView {
     @IBOutlet weak var imgStore2:UIImageView!
     
     weak var delegate:SVMultipleStoreViewDelegate?
-    var store:SVStore?
     
     internal func setDeliverySlot(slot:String)
     {
