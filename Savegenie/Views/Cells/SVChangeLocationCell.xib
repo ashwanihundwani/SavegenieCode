@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="SVChangeLocationCell" id="KGk-i7-Jjw" customClass="SVChangeLocationCell" customModule="Savegenie" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tKo-yo-7fh" userLabel="Address View">
+                        <rect key="frame" x="0.0" y="7" width="320" height="29"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You delivery area is" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fgI-z4-aW9">
+                                <rect key="frame" x="21" y="2" width="196" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="Iwb-uz-Gcq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="9"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Iwb-uz-Gcq"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ODb-Nb-sTA">
+                                <rect key="frame" x="240" y="2" width="80" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="V4p-C1-j9z"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="9"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="15" maxY="0.0"/>
+                                <state key="normal" title="Change Area">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="changeLocationTapped" destination="KGk-i7-Jjw" eventType="touchUpInside" id="8qy-CQ-i2d"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="down-arrow" translatesAutoresizingMaskIntoConstraints="NO" id="suW-Ar-Nbm">
+                                <rect key="frame" x="304" y="11" width="10" height="8"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="10" id="3Ss-pG-0d7"/>
+                                    <constraint firstAttribute="height" constant="8" id="ne4-k5-2IA"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Location_Icon" translatesAutoresizingMaskIntoConstraints="NO" id="ICZ-th-MxW">
+                                <rect key="frame" x="2" y="4" width="20" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="QuT-nx-dz3"/>
+                                    <constraint firstAttribute="width" constant="20" id="sh4-a4-p0F"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ODb-Nb-sTA" secondAttribute="trailing" id="5e5-hr-qMt"/>
+                            <constraint firstItem="fgI-z4-aW9" firstAttribute="top" secondItem="tKo-yo-7fh" secondAttribute="top" constant="2" id="DbF-Gi-XWS"/>
+                            <constraint firstItem="fgI-z4-aW9" firstAttribute="leading" secondItem="tKo-yo-7fh" secondAttribute="leading" constant="21" id="EP6-ql-dtg"/>
+                            <constraint firstAttribute="trailing" secondItem="suW-Ar-Nbm" secondAttribute="trailing" constant="6" id="GJF-ZL-OwR"/>
+                            <constraint firstItem="ODb-Nb-sTA" firstAttribute="leading" secondItem="fgI-z4-aW9" secondAttribute="trailing" constant="23" id="Hb9-8Q-XxC"/>
+                            <constraint firstItem="ICZ-th-MxW" firstAttribute="centerY" secondItem="tKo-yo-7fh" secondAttribute="centerY" id="cf7-Sa-vDw"/>
+                            <constraint firstItem="ICZ-th-MxW" firstAttribute="leading" secondItem="tKo-yo-7fh" secondAttribute="leading" constant="2" id="fEW-7N-y8Z"/>
+                            <constraint firstAttribute="height" constant="29" id="lYV-XA-aRr"/>
+                            <constraint firstItem="ODb-Nb-sTA" firstAttribute="top" secondItem="tKo-yo-7fh" secondAttribute="top" constant="2" id="mtr-n2-w5f"/>
+                            <constraint firstItem="suW-Ar-Nbm" firstAttribute="centerY" secondItem="tKo-yo-7fh" secondAttribute="centerY" id="nDh-yt-gfN"/>
+                            <constraint firstItem="fgI-z4-aW9" firstAttribute="leading" secondItem="ICZ-th-MxW" secondAttribute="trailing" constant="1" id="nYi-Va-odh"/>
+                            <constraint firstAttribute="bottom" secondItem="ODb-Nb-sTA" secondAttribute="bottom" constant="3" id="smk-dr-yg7"/>
+                            <constraint firstAttribute="bottom" secondItem="fgI-z4-aW9" secondAttribute="bottom" constant="2" id="xQZ-Ft-22r"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="nYi-Va-odh"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="tKo-yo-7fh" secondAttribute="trailing" id="6TO-Tf-vB9"/>
+                    <constraint firstItem="tKo-yo-7fh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Bnl-0P-wLw"/>
+                    <constraint firstAttribute="bottom" secondItem="tKo-yo-7fh" secondAttribute="bottom" constant="7" id="mJJ-eF-3fj"/>
+                    <constraint firstItem="tKo-yo-7fh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="7" id="wO2-NA-EOB"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="btnChangeLocation" destination="ODb-Nb-sTA" id="d2a-IJ-ySa"/>
+                <outlet property="lblLocation" destination="fgI-z4-aW9" id="7ja-8J-f9N"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Location_Icon" width="128" height="128"/>
+        <image name="down-arrow" width="20" height="11"/>
+    </resources>
+</document>

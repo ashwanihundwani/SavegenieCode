@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="SVVerticalBannerCell" id="KGk-i7-Jjw" customClass="SVVerticalBannerCell" customModule="Savegenie" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="302" height="115"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="302" height="114"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Placeholder_Image" translatesAutoresizingMaskIntoConstraints="NO" id="pZH-WB-8m1">
+                        <rect key="frame" x="5" y="5" width="292" height="104"/>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="pZH-WB-8m1" secondAttribute="trailing" constant="5" id="CDU-rE-2HB"/>
+                    <constraint firstAttribute="bottom" secondItem="pZH-WB-8m1" secondAttribute="bottom" constant="5" id="fXO-KP-hSZ"/>
+                    <constraint firstItem="pZH-WB-8m1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="gQZ-kS-Oet"/>
+                    <constraint firstItem="pZH-WB-8m1" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="hMT-ny-ltu"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="bannerImageView" destination="pZH-WB-8m1" id="mUF-DI-7Xw"/>
+            </connections>
+            <point key="canvasLocation" x="280" y="260.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Placeholder_Image" width="200" height="200"/>
+    </resources>
+</document>

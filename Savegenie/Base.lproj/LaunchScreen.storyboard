@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
+                        <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
+                    </layoutGuides>
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_logo" translatesAutoresizingMaskIntoConstraints="NO" id="gWP-Gb-qzY">
+                                <rect key="frame" x="210" y="210" width="180" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="hxF-sF-mrg"/>
+                                    <constraint firstAttribute="width" constant="180" id="s8n-Ky-BUC"/>
+                                </constraints>
+                            </imageView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="67J-5o-9lj">
+                                <rect key="frame" x="258" y="543" width="84" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="84" id="0FR-sW-ozi"/>
+                                    <constraint firstAttribute="height" constant="37" id="QaE-W0-Muc"/>
+                                </constraints>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" red="0.92941176470588238" green="0.19607843137254902" blue="0.21176470588235294" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="gWP-Gb-qzY" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="1ZP-rA-hCr"/>
+                            <constraint firstItem="gWP-Gb-qzY" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="6Nn-kZ-UTG"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="67J-5o-9lj" secondAttribute="bottom" constant="20" id="jae-bE-9kt"/>
+                            <constraint firstItem="67J-5o-9lj" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="y3K-kT-oER"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="315" y="346"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="splash_logo" width="367" height="368"/>
+    </resources>
+</document>
