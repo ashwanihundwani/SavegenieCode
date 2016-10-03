@@ -13,6 +13,7 @@ class SVProductDetailViewController: SVBaseViewController, UITableViewDataSource
     
     @IBOutlet weak var tableView: UITableView!
     
+    var productDetails: SVProductDetails?
     
     var product:Product? = nil
     //@IBOutlet weak var imgProduct: UIImageView!
@@ -23,6 +24,7 @@ class SVProductDetailViewController: SVBaseViewController, UITableViewDataSource
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        fetchProductDetails()
         // Do any additional setup after loading the view.
         
         //lblProductName.text = product?.productName!
@@ -88,27 +90,50 @@ class SVProductDetailViewController: SVBaseViewController, UITableViewDataSource
         return SVNavBarConfig(showBack: true, showSearch: true, showCart: true, title: "Product Detail")
     }
     
+    // MARK: Private Methods
+    
+    func fetchProductDetails() {
+        
+        if let pid = product?.identifier {
+            SVUtil.showLoader()
+            SVJSONAppService.fetchProductDetails(["product_sku_id": pid], responsObjectKey: "") { (details: SVProductDetails?, error:NSError?) in
+                self.productDetails = details
+                self.tableView.reloadData()
+                SVUtil.hideLoader()
+            }
+        }
+    }
     
     //MARK: UITableViewDataSource, UITableViewDelegate
     
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 2
+    }
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        if section == 0 {
+            return 1
+        }
+        
+        return productDetails?.descriptions?.count ?? 0
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = UITableViewCell()
-        if indexPath.row == 0 {
+        if indexPath.section == 0 {
             cell = tableView.dequeueReusableCellWithIdentifier("SVProductDetailsTableCell") as! SVProductDetailsTableCell
+            (cell as! SVProductDetailsTableCell).configureCellWithImagesArray(productDetails?.imagesArray)
         }
         else {
             cell = tableView.dequeueReusableCellWithIdentifier("SVProductSummaryTableCell") as! SVProductSummaryTableCell
+            (cell as! SVProductSummaryTableCell).configureCellWithDetails(self.productDetails?.descriptions?[indexPath.row])
         }
         
         return cell
     }
 
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        if indexPath.row == 0 {
+        if indexPath.section == 0 {
             return 300
         }
         

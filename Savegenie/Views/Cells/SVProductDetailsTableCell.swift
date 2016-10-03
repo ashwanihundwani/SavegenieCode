@@ -18,11 +18,12 @@ class SVProductDetailsTableCell: UITableViewCell, UICollectionViewDataSource, UI
     @IBOutlet weak var reviewLabel: UILabel!
     @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var pageControl: UIPageControl!
+    
+    private var imagesArray: Array<String>?
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        pageControl.numberOfPages = pageCount
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -30,15 +31,25 @@ class SVProductDetailsTableCell: UITableViewCell, UICollectionViewDataSource, UI
 
         // Configure the view for the selected state
     }
+    
+    func configureCellWithImagesArray(imagesArray: Array<String>?) {
+        self.imagesArray = imagesArray
+        
+        if let _ = self.imagesArray {
+            pageControl.numberOfPages = self.imagesArray!.count
+            
+        }
+    }
 
     // MARK: UICollectionViewDataSource, UICollectionViewDelegate
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return pageCount
+        return imagesArray?.count ?? 0
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("SVProductImageCollectionCell", forIndexPath: indexPath) as! SVProductImageCollectionCell
+        cell.configureCellWithImage(imagesArray![indexPath.item])
         
         return cell
     }

@@ -313,4 +313,12 @@ class SVJSONAppService: NSObject {
         self.post(URL, params: params, responseObjectKey: responsObjectKey, completionHandler: handler);
         
     }
+    
+    static func fetchProductDetails(params : Dictionary<String, AnyObject>, responsObjectKey: String!, completionHandler handler: (SVProductDetails? , NSError?) -> Void){
+        
+        let URL = SVConstants.PRODUCT_DETAIL_URL
+        
+        self.post(URL, params: params, responseObjectKey: responsObjectKey, completionHandler: handler);
+        
+    }
 }

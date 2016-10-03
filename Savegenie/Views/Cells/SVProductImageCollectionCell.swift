@@ -9,5 +9,9 @@
 import UIKit
 
 class SVProductImageCollectionCell: UICollectionViewCell {
+    @IBOutlet weak var productImageView: UIImageView!
     
+    func configureCellWithImage(imageString: String) {
+        productImageView.setImageWithURL(SVUtil.productImageURL(imageString))
+    }
 }

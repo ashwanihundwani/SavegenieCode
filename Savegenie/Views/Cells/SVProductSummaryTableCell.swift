@@ -23,5 +23,9 @@ class SVProductSummaryTableCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
+    func configureCellWithDetails(details: SVproductDescription?) {
+        titleLabel.text = details?.header
+        subTitleLabel.text = details?.details
+    }
 }
