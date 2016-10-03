@@ -9,12 +9,15 @@
 import UIKit
 import Kingfisher
 
-class SVProductDetailViewController: SVBaseViewController {
+class SVProductDetailViewController: SVBaseViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    @IBOutlet weak var tableView: UITableView!
+    
     
     var product:Product? = nil
-    @IBOutlet weak var imgProduct: UIImageView!
-    @IBOutlet weak var lblProductName: UILabel!
-    @IBOutlet weak var lblPrice: UILabel!
+    //@IBOutlet weak var imgProduct: UIImageView!
+    //@IBOutlet weak var lblProductName: UILabel!
+    //@IBOutlet weak var lblPrice: UILabel!
 
     //MARK: Overridden Methods
     override func viewDidLoad() {
@@ -22,7 +25,7 @@ class SVProductDetailViewController: SVBaseViewController {
 
         // Do any additional setup after loading the view.
         
-        lblProductName.text = product?.productName!
+        //lblProductName.text = product?.productName!
         var attrText:NSMutableAttributedString = NSMutableAttributedString()
         
         let mrpString = "Rs. \(product!.mrp!.integerValue) /"
@@ -71,9 +74,9 @@ class SVProductDetailViewController: SVBaseViewController {
         attrText.appendAttributedString(attrMRPText)
         attrText.appendAttributedString(attrDiscountText)
         
-        lblPrice.attributedText = attrText
+        //lblPrice.attributedText = attrText
         
-        imgProduct.setImageWithURL(SVUtil.productImageURL(product!.image!))
+        //imgProduct.setImageWithURL(SVUtil.productImageURL(product!.image!))
     }
 
     override func didReceiveMemoryWarning() {
@@ -86,17 +89,30 @@ class SVProductDetailViewController: SVBaseViewController {
     }
     
     
-    //MARK: Private Methods
+    //MARK: UITableViewDataSource, UITableViewDelegate
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
     }
-    */
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var cell = UITableViewCell()
+        if indexPath.row == 0 {
+            cell = tableView.dequeueReusableCellWithIdentifier("SVProductDetailsTableCell") as! SVProductDetailsTableCell
+        }
+        else {
+            cell = tableView.dequeueReusableCellWithIdentifier("SVProductSummaryTableCell") as! SVProductSummaryTableCell
+        }
+        
+        return cell
+    }
+
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if indexPath.row == 0 {
+            return 300
+        }
+        
+        return 55
+    }
 
 }

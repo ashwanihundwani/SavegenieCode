@@ -36,6 +36,9 @@
 		4DF647411D6C305900D47E07 /* SVStoreCatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF647401D6C305900D47E07 /* SVStoreCatViewController.swift */; };
 		4DF647441D6C76E300D47E07 /* ResponseModelProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF647431D6C76E300D47E07 /* ResponseModelProtocols.swift */; };
 		8583CFDB77A3CCE2CCA7AEAD /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A1158382D7B1341E99C7AC1 /* Pods.framework */; };
+		CB6FB8AB1DA0D98C00BFA67F /* SVProductDetailsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6FB8AA1DA0D98C00BFA67F /* SVProductDetailsTableCell.swift */; };
+		CB6FB8AD1DA0D9BE00BFA67F /* SVProductSummaryTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6FB8AC1DA0D9BE00BFA67F /* SVProductSummaryTableCell.swift */; };
+		CB6FB8AF1DA0DFD900BFA67F /* SVProductImageCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6FB8AE1DA0DFD900BFA67F /* SVProductImageCollectionCell.swift */; };
 		E7010BCE1D3213B80097E0DD /* SVTextAppService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7010BCD1D3213B80097E0DD /* SVTextAppService.swift */; };
 		E7010BD01D3240BB0097E0DD /* SVFavoriteProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7010BCF1D3240BB0097E0DD /* SVFavoriteProductListViewController.swift */; };
 		E702540E1D243E1600B2A8F4 /* SVProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E702540D1D243E1600B2A8F4 /* SVProfileViewController.swift */; };
@@ -177,6 +180,9 @@
 		4DF6473D1D6C2D9900D47E07 /* SVBannerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVBannerCell.swift; sourceTree = "<group>"; };
 		4DF647401D6C305900D47E07 /* SVStoreCatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVStoreCatViewController.swift; sourceTree = "<group>"; };
 		4DF647431D6C76E300D47E07 /* ResponseModelProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseModelProtocols.swift; sourceTree = "<group>"; };
+		CB6FB8AA1DA0D98C00BFA67F /* SVProductDetailsTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVProductDetailsTableCell.swift; sourceTree = "<group>"; };
+		CB6FB8AC1DA0D9BE00BFA67F /* SVProductSummaryTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVProductSummaryTableCell.swift; sourceTree = "<group>"; };
+		CB6FB8AE1DA0DFD900BFA67F /* SVProductImageCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVProductImageCollectionCell.swift; sourceTree = "<group>"; };
 		DD2886C223E9EEB537C39C07 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		E7010BCD1D3213B80097E0DD /* SVTextAppService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVTextAppService.swift; sourceTree = "<group>"; };
 		E7010BCF1D3240BB0097E0DD /* SVFavoriteProductListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVFavoriteProductListViewController.swift; sourceTree = "<group>"; };
@@ -602,6 +608,9 @@
 				4D18F4801D72B6EC0003FEE0 /* SVShopCategoryCell.xib */,
 				4D199B531D740BB50087B478 /* SVStoreCell.swift */,
 				4D199B541D740BB50087B478 /* SVStoreCell.xib */,
+				CB6FB8AA1DA0D98C00BFA67F /* SVProductDetailsTableCell.swift */,
+				CB6FB8AC1DA0D9BE00BFA67F /* SVProductSummaryTableCell.swift */,
+				CB6FB8AE1DA0DFD900BFA67F /* SVProductImageCollectionCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -786,6 +795,7 @@
 				E70CA16F1D22EE390054ECAD /* SVXMLAppService.swift in Sources */,
 				4DF647411D6C305900D47E07 /* SVStoreCatViewController.swift in Sources */,
 				E7BF0B6D1D1D836800247890 /* SVSearchItemCell.swift in Sources */,
+				CB6FB8AD1DA0D9BE00BFA67F /* SVProductSummaryTableCell.swift in Sources */,
 				4D2120901D7938DD00AF4F49 /* SVMasterCategories.swift in Sources */,
 				E7E72DB11D53AEC400063E82 /* SVMyLists.swift in Sources */,
 				4DC820B51D6C808200052DC7 /* SVShopCategoryCell.swift in Sources */,
@@ -837,6 +847,7 @@
 				4D34613A1D78013400144EEA /* SVStores.swift in Sources */,
 				E76CCB3E1D1FF3D3005E9CBE /* KYEmbedDrawerControllerSegue.swift in Sources */,
 				E70423E61D28C38600F84ACD /* PagingMenuHelper.swift in Sources */,
+				CB6FB8AF1DA0DFD900BFA67F /* SVProductImageCollectionCell.swift in Sources */,
 				4D18F4751D72A2B80003FEE0 /* SVVerticalBannerCell.swift in Sources */,
 				E7FF1AD21D151F0D009FE8E2 /* SVLoginViewController.swift in Sources */,
 				E726D46D1D1E4426000D86E4 /* SVProductModel.swift in Sources */,
@@ -846,6 +857,7 @@
 				E76CCB2C1D1FAA9F005E9CBE /* SVUserDetails.swift in Sources */,
 				E7D8AB4A1D2C3C9B0022F3CD /* SVFilterCell.swift in Sources */,
 				E734CE4F1D27C61300F8F99A /* SVPromoProductListViewController.swift in Sources */,
+				CB6FB8AB1DA0D98C00BFA67F /* SVProductDetailsTableCell.swift in Sources */,
 				4D18F4711D71F3310003FEE0 /* SVChangeLocationCell.swift in Sources */,
 				E7010BCE1D3213B80097E0DD /* SVTextAppService.swift in Sources */,
 				E79852CC1D55AF6100D68B08 /* AddAddressView.swift in Sources */,
