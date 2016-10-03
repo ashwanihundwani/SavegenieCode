@@ -75,7 +75,7 @@ class SVStoreListViewController: SVBaseViewController {
     var masterCategories:SVMasterCategories?
     var resultCounter:Int = 0
     var commonSlot:SVCommonSlot? =  nil
-    var promos:SVDeals? = nil
+    var promos:SVStorePromos? = nil
     var selectedStore:SVStore? = nil
     
     override func navBarConfig() -> SVNavBarConfig {
@@ -313,9 +313,9 @@ extension SVStoreListViewController : SVMultipleStoreViewDelegate {
     
     private func fetchPromos(store:SVStore) {
         
-        let params:Array<(key:String, value:AnyObject)> = [("data[store_id]", store.identifier!)]
+        let params:Array<(key:String, value:AnyObject)> = [("data[storeId]", store.identifier!)]
         
-        SVJSONAppService.fetchPromos(params, responsObjectKey: "") { (promos:SVDeals?, error:NSError?) in
+        SVJSONAppService.fetchPromos(params, responsObjectKey: "") { (promos:SVStorePromos?, error:NSError?) in
             
             if let _ = promos {
                 self.promos = promos
@@ -346,7 +346,7 @@ extension SVStoreListViewController : SVMultipleStoreViewDelegate {
     
     private func fetchCommonSlot(store:SVStore) {
     
-        let params:Array<(key:String, value:AnyObject)> = [("data[store_id]", store.identifier!)]
+        let params:Array<(key:String, value:AnyObject)> = [("data[storeId]", store.identifier!)]
         
         
         SVJSONAppService.fetchCommonSlot(params, responsObjectKey: "") { (commonSlot:SVCommonSlot?, error:NSError?) in

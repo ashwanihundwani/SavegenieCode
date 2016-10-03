@@ -294,7 +294,7 @@ class SVJSONAppService: NSObject {
         
     }
     
-    static func fetchPromos(params:Array<(key:String, value:AnyObject)>, responsObjectKey: String!, completionHandler handler: (SVDeals? , NSError?) -> Void){
+    static func fetchPromos(params:Array<(key:String, value:AnyObject)>, responsObjectKey: String!, completionHandler handler: (SVStorePromos? , NSError?) -> Void){
         
         let URL = SVConstants.PROMOS
         

@@ -23,7 +23,7 @@ class SVHomeViewController: SVBaseViewController, UICollectionViewDelegate, UICo
     var store:SVStore?
     var categories:Array<ProductCategory> = Array<ProductCategory>()
     var masterCategories:SVMasterCategories?
-    var promos:SVDeals?
+    var promos:SVStorePromos?
     
     //MARK: Overridden Methods
     override func navBarConfig() -> SVNavBarConfig {

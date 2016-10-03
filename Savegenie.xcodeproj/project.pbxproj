@@ -26,6 +26,7 @@
 		4D2120921D79CE6A00AF4F49 /* SVChangeAddressResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2120911D79CE6A00AF4F49 /* SVChangeAddressResponse.swift */; };
 		4D3461381D76DA4B00144EEA /* SVCategoriesLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3461371D76DA4B00144EEA /* SVCategoriesLayout.swift */; };
 		4D34613A1D78013400144EEA /* SVStores.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3461391D78013400144EEA /* SVStores.swift */; };
+		4D79FA1A1DA100FA0009CD27 /* SVStorePromos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D79FA191DA100FA0009CD27 /* SVStorePromos.swift */; };
 		4DC820B51D6C808200052DC7 /* SVShopCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC820B41D6C808200052DC7 /* SVShopCategoryCell.swift */; };
 		4DEF7C0C1D8D1E7D000786F3 /* MultipleStoreView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DEF7C0B1D8D1E7D000786F3 /* MultipleStoreView.xib */; };
 		4DEF7C0E1D8D1EF2000786F3 /* SVMultipleStoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEF7C0D1D8D1EF2000786F3 /* SVMultipleStoreView.swift */; };
@@ -167,6 +168,7 @@
 		4D2120911D79CE6A00AF4F49 /* SVChangeAddressResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVChangeAddressResponse.swift; sourceTree = "<group>"; };
 		4D3461371D76DA4B00144EEA /* SVCategoriesLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVCategoriesLayout.swift; sourceTree = "<group>"; };
 		4D3461391D78013400144EEA /* SVStores.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVStores.swift; sourceTree = "<group>"; };
+		4D79FA191DA100FA0009CD27 /* SVStorePromos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVStorePromos.swift; sourceTree = "<group>"; };
 		4DC820B41D6C808200052DC7 /* SVShopCategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVShopCategoryCell.swift; sourceTree = "<group>"; };
 		4DEF7C0B1D8D1E7D000786F3 /* MultipleStoreView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MultipleStoreView.xib; sourceTree = "<group>"; };
 		4DEF7C0D1D8D1EF2000786F3 /* SVMultipleStoreView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVMultipleStoreView.swift; sourceTree = "<group>"; };
@@ -398,6 +400,7 @@
 				4D21208F1D7938DD00AF4F49 /* SVMasterCategories.swift */,
 				4D2120911D79CE6A00AF4F49 /* SVChangeAddressResponse.swift */,
 				4DEF7C111D8D3E67000786F3 /* SVCommonSlot.swift */,
+				4D79FA191DA100FA0009CD27 /* SVStorePromos.swift */,
 			);
 			name = "Response Models";
 			sourceTree = "<group>";
@@ -854,6 +857,7 @@
 				E72D0BA01D1C51B000F6AB81 /* SVSearchViewController.swift in Sources */,
 				E7FF1AB11D151B12009FE8E2 /* AppDelegate.swift in Sources */,
 				4D18F46D1D71EFD20003FEE0 /* SVBannerTableCell.swift in Sources */,
+				4D79FA1A1DA100FA0009CD27 /* SVStorePromos.swift in Sources */,
 				E7E72DA71D53261F00063E82 /* SVOrderDetailsViewController.swift in Sources */,
 				E748EDCB1D3F5F8200C4BBC5 /* SVReviewOrderViewController.swift in Sources */,
 				E735B1C91D48BF6B00598F0D /* AFDateExtension.swift in Sources */,
