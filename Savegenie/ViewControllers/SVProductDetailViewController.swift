@@ -14,7 +14,8 @@ class SVProductDetailViewController: SVBaseViewController, UITableViewDataSource
     @IBOutlet weak var tableView: UITableView!
     
     var productDetails: SVProductDetails?
-    
+    var similarProductsArray: Array<Product>?
+        
     var product:Product? = nil
     //@IBOutlet weak var imgProduct: UIImageView!
     //@IBOutlet weak var lblProductName: UILabel!
@@ -25,6 +26,7 @@ class SVProductDetailViewController: SVBaseViewController, UITableViewDataSource
         super.viewDidLoad()
 
         fetchProductDetails()
+        getSimilarProducts()
         // Do any additional setup after loading the view.
         
         //lblProductName.text = product?.productName!
@@ -93,28 +95,49 @@ class SVProductDetailViewController: SVBaseViewController, UITableViewDataSource
     // MARK: Private Methods
     
     func fetchProductDetails() {
-        
+        tableView.hidden = true
         if let pid = product?.identifier {
             SVUtil.showLoader()
             SVJSONAppService.fetchProductDetails(["product_sku_id": pid], responsObjectKey: "") { (details: SVProductDetails?, error:NSError?) in
                 
                 if let _ = details {
                     self.productDetails = details
+                    self.tableView.hidden = false
                     self.tableView.reloadData()
                     SVUtil.hideLoader()
                 }
                 else {
                     SVUtil.showAlert("Error", message: error?.description ?? "", controller: self)
-                    self.navigationController?.popViewControllerAnimated(true)
                 }
             }
+        }
+    }
+    
+    func getSimilarProducts() {
+        if let pid = product?.identifier {
+            SVJSONAppService.getSimilarProduct(["product_sku_id": pid], responsObjectKey: "", completionHandler: { (details: SVSimilarProductDetails?, error) in
+                
+                if let _ = details {
+                    if details?.similarProductsIds?.count > 0 {
+                        self.similarProductsArray = SVCoreDataManager.getProductsWithIds((details?.similarProductsIds)!)
+                        self.tableView.reloadData()
+                    }
+                }
+                else {
+                    SVUtil.showAlert("Error", message: error?.description ?? "", controller: self)
+                }
+            });
         }
     }
     
     //MARK: UITableViewDataSource, UITableViewDelegate
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 3
+        if self.similarProductsArray?.count > 0 {
+            return 3
+        }
+        
+        return 2
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -125,7 +148,7 @@ class SVProductDetailViewController: SVBaseViewController, UITableViewDataSource
             return productDetails?.descriptions?.count ?? 0
         }
         else {
-            return 3
+            return self.similarProductsArray?.count ?? 0
         }
     }
     
@@ -140,7 +163,8 @@ class SVProductDetailViewController: SVBaseViewController, UITableViewDataSource
             (cell as! SVProductSummaryTableCell).configureCellWithDetails(self.productDetails?.descriptions?[indexPath.row])
         }
         else {
-            // Similar product
+            cell = tableView.dequeueReusableCellWithIdentifier("SVSimilarProductTableCell") as! SVSimilarProductTableCell
+            (cell as! SVSimilarProductTableCell).configureCellWithProductDetails(self.similarProductsArray?[indexPath.row])
         }
         
         return cell
