@@ -27,6 +27,7 @@ internal class SVConstants: NSObject {
     static internal let CATEGORY_BASE_URL = SERVER_URL + "img/shop_images/"
     static internal let STORE_IMAGE_BASE_URL = SERVER_URL + "img/shop_images/"
     static internal let MASTER_CATEGORY_BASE_URL = SERVER_URL + "img/master_cat_images/"
+    static internal let PRODUCT_LARGE_IMAGE_URL = SERVER_URL + "img/allproduct_large_image/"
     
     static internal let LOGIN_URL:String = SERVER_URL + "usermgmt/users/androidLogin.json"
     

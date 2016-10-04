@@ -12,6 +12,7 @@ class SVProductImageCollectionCell: UICollectionViewCell {
     @IBOutlet weak var productImageView: UIImageView!
     
     func configureCellWithImage(imageString: String) {
-        productImageView.setImageWithURL(SVUtil.productImageURL(imageString))
+        let url = SVUtil.productLargeImageURL(imageString)
+        productImageView.setImageWithURL(url)
     }
 }

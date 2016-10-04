@@ -97,9 +97,16 @@ class SVProductDetailViewController: SVBaseViewController, UITableViewDataSource
         if let pid = product?.identifier {
             SVUtil.showLoader()
             SVJSONAppService.fetchProductDetails(["product_sku_id": pid], responsObjectKey: "") { (details: SVProductDetails?, error:NSError?) in
-                self.productDetails = details
-                self.tableView.reloadData()
-                SVUtil.hideLoader()
+                
+                if let _ = details {
+                    self.productDetails = details
+                    self.tableView.reloadData()
+                    SVUtil.hideLoader()
+                }
+                else {
+                    SVUtil.showAlert("Error", message: error?.description ?? "", controller: self)
+                    self.navigationController?.popViewControllerAnimated(true)
+                }
             }
         }
     }
@@ -107,15 +114,19 @@ class SVProductDetailViewController: SVBaseViewController, UITableViewDataSource
     //MARK: UITableViewDataSource, UITableViewDelegate
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 2
+        return 3
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
             return 1
         }
-        
-        return productDetails?.descriptions?.count ?? 0
+        else if section == 1 {
+            return productDetails?.descriptions?.count ?? 0
+        }
+        else {
+            return 3
+        }
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -124,9 +135,12 @@ class SVProductDetailViewController: SVBaseViewController, UITableViewDataSource
             cell = tableView.dequeueReusableCellWithIdentifier("SVProductDetailsTableCell") as! SVProductDetailsTableCell
             (cell as! SVProductDetailsTableCell).configureCellWithImagesArray(productDetails?.imagesArray)
         }
-        else {
+        else if indexPath.section == 1 {
             cell = tableView.dequeueReusableCellWithIdentifier("SVProductSummaryTableCell") as! SVProductSummaryTableCell
             (cell as! SVProductSummaryTableCell).configureCellWithDetails(self.productDetails?.descriptions?[indexPath.row])
+        }
+        else {
+            // Similar product
         }
         
         return cell
@@ -136,8 +150,36 @@ class SVProductDetailViewController: SVBaseViewController, UITableViewDataSource
         if indexPath.section == 0 {
             return 300
         }
+        else if indexPath.section == 1 {
+            return 55
+        }
         
-        return 55
+        return 80
     }
-
+    
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if section == 2 {
+            let view = UIView(frame: CGRectMake(0, 0, tableView.frame.width, 40))
+            view.backgroundColor = UIColor(red: 238.0/255.0, green: 238.0/255.0, blue: 238.0/255.0, alpha: 1.0)
+            
+            let label = UILabel(frame: CGRectMake(0, 10, tableView.frame.width, 30))
+            label.backgroundColor = UIColor.whiteColor()
+            label.text = "  Similar Products"
+            label.textColor = UIColor.lightGrayColor()
+            label.font = UIFont(name: "Helvetica Neue", size: 14.0)
+            view.addSubview(label)
+            
+            return view
+        }
+        
+        return nil
+    }
+    
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if section == 2 {
+            return 40
+        }
+        
+        return 0
+    }
 }

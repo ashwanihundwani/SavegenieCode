@@ -37,7 +37,7 @@ class SVProductDetailsTableCell: UITableViewCell, UICollectionViewDataSource, UI
         
         if let _ = self.imagesArray {
             pageControl.numberOfPages = self.imagesArray!.count
-            
+            collectionView.reloadData()
         }
     }
 
