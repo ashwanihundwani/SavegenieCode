@@ -413,6 +413,8 @@
 				4D2120911D79CE6A00AF4F49 /* SVChangeAddressResponse.swift */,
 				4DEF7C111D8D3E67000786F3 /* SVCommonSlot.swift */,
 				4D79FA191DA100FA0009CD27 /* SVStorePromos.swift */,
+				CB374E131DA2C99D008B9FA2 /* SVProductDetails.swift */,
+				CB894B3A1DA4115000B582A2 /* SVSimilarProductDetails.swift */,
 			);
 			name = "Response Models";
 			sourceTree = "<group>";
