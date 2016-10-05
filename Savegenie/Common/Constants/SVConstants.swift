@@ -27,6 +27,7 @@ internal class SVConstants: NSObject {
     static internal let CATEGORY_BASE_URL = SERVER_URL + "img/shop_images/"
     static internal let STORE_IMAGE_BASE_URL = SERVER_URL + "img/shop_images/"
     static internal let MASTER_CATEGORY_BASE_URL = SERVER_URL + "img/master_cat_images/"
+    static internal let PRODUCT_LARGE_IMAGE_URL = SERVER_URL + "img/allproduct_large_image/"
     
     static internal let LOGIN_URL:String = SERVER_URL + "usermgmt/users/androidLogin.json"
     
@@ -99,6 +100,10 @@ internal class SVConstants: NSObject {
     static internal let PROMOS:String = SERVER_URL + "Pages/androidPromoJsonByStore.json"
     
     static internal let SPONSORED_PRODUCTS:String = SERVER_URL + "Stores/getSupplierAdSponsorProductData.json"
+    
+    static internal let PRODUCT_DETAIL_URL:String = SERVER_URL + "Stores/androidProductDescription.json"
+    
+    static internal let SIMILAR_PRODUCT_URL:String = SERVER_URL + "ProductSkus/androidFrequentlyBoughtTogether.json"
     
     
     static internal let DATA_ZIP_URL:String = "http://data.savegenie.mu/mobilejson/savegenie-dev-mu.zip"

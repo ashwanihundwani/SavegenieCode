@@ -371,6 +371,14 @@ class SVUtil : NSObject
         
     }
     
+    static func productLargeImageURL(imageName: String) -> NSURL {
+        var urlStr = SVConstants.PRODUCT_LARGE_IMAGE_URL + imageName
+        
+        urlStr = urlStr.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
+        
+        return NSURL(string: urlStr)!
+    }
+    
     static func categoryImageURL(imageName:String) -> NSURL {
         
         var urlStr = SVConstants.CATEGORY_BASE_URL + imageName

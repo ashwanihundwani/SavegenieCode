@@ -13,7 +13,9 @@ class SVProductDetailViewController: SVBaseViewController, UITableViewDataSource
     
     @IBOutlet weak var tableView: UITableView!
     
-    
+    var productDetails: SVProductDetails?
+    var similarProductsArray: Array<Product>?
+        
     var product:Product? = nil
     //@IBOutlet weak var imgProduct: UIImageView!
     //@IBOutlet weak var lblProductName: UILabel!
@@ -23,6 +25,8 @@ class SVProductDetailViewController: SVBaseViewController, UITableViewDataSource
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        fetchProductDetails()
+        getSimilarProducts()
         // Do any additional setup after loading the view.
         
         //lblProductName.text = product?.productName!
@@ -88,31 +92,118 @@ class SVProductDetailViewController: SVBaseViewController, UITableViewDataSource
         return SVNavBarConfig(showBack: true, showSearch: true, showCart: true, title: "Product Detail")
     }
     
+    // MARK: Private Methods
+    
+    func fetchProductDetails() {
+        tableView.hidden = true
+        if let pid = product?.identifier {
+            SVUtil.showLoader()
+            SVJSONAppService.fetchProductDetails(["product_sku_id": pid], responsObjectKey: "") { (details: SVProductDetails?, error:NSError?) in
+                
+                if let _ = details {
+                    self.productDetails = details
+                    self.tableView.hidden = false
+                    self.tableView.reloadData()
+                    SVUtil.hideLoader()
+                }
+                else {
+                    SVUtil.showAlert("Error", message: error?.description ?? "", controller: self)
+                }
+            }
+        }
+    }
+    
+    func getSimilarProducts() {
+        if let pid = product?.identifier {
+            SVJSONAppService.getSimilarProduct(["product_sku_id": pid], responsObjectKey: "", completionHandler: { (details: SVSimilarProductDetails?, error) in
+                
+                if let _ = details {
+                    if details?.similarProductsIds?.count > 0 {
+                        self.similarProductsArray = SVCoreDataManager.getProductsWithIds((details?.similarProductsIds)!)
+                        self.tableView.reloadData()
+                    }
+                }
+                else {
+                    SVUtil.showAlert("Error", message: error?.description ?? "", controller: self)
+                }
+            });
+        }
+    }
     
     //MARK: UITableViewDataSource, UITableViewDelegate
     
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        if self.similarProductsArray?.count > 0 {
+            return 3
+        }
+        
+        return 2
+    }
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        if section == 0 {
+            return 1
+        }
+        else if section == 1 {
+            return productDetails?.descriptions?.count ?? 0
+        }
+        else {
+            return self.similarProductsArray?.count ?? 0
+        }
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = UITableViewCell()
-        if indexPath.row == 0 {
+        if indexPath.section == 0 {
             cell = tableView.dequeueReusableCellWithIdentifier("SVProductDetailsTableCell") as! SVProductDetailsTableCell
+            (cell as! SVProductDetailsTableCell).configureCellWithImagesArray(productDetails?.imagesArray)
+        }
+        else if indexPath.section == 1 {
+            cell = tableView.dequeueReusableCellWithIdentifier("SVProductSummaryTableCell") as! SVProductSummaryTableCell
+            (cell as! SVProductSummaryTableCell).configureCellWithDetails(self.productDetails?.descriptions?[indexPath.row])
         }
         else {
-            cell = tableView.dequeueReusableCellWithIdentifier("SVProductSummaryTableCell") as! SVProductSummaryTableCell
+            cell = tableView.dequeueReusableCellWithIdentifier("SVSimilarProductTableCell") as! SVSimilarProductTableCell
+            (cell as! SVSimilarProductTableCell).configureCellWithProductDetails(self.similarProductsArray?[indexPath.row])
         }
         
         return cell
     }
 
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        if indexPath.row == 0 {
+        if indexPath.section == 0 {
             return 300
         }
+        else if indexPath.section == 1 {
+            return 55
+        }
         
-        return 55
+        return 80
     }
-
+    
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if section == 2 {
+            let view = UIView(frame: CGRectMake(0, 0, tableView.frame.width, 40))
+            view.backgroundColor = UIColor(red: 238.0/255.0, green: 238.0/255.0, blue: 238.0/255.0, alpha: 1.0)
+            
+            let label = UILabel(frame: CGRectMake(0, 10, tableView.frame.width, 30))
+            label.backgroundColor = UIColor.whiteColor()
+            label.text = "  Similar Products"
+            label.textColor = UIColor.lightGrayColor()
+            label.font = UIFont(name: "Helvetica Neue", size: 14.0)
+            view.addSubview(label)
+            
+            return view
+        }
+        
+        return nil
+    }
+    
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if section == 2 {
+            return 40
+        }
+        
+        return 0
+    }
 }
