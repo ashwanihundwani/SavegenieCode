@@ -322,7 +322,7 @@ class SVJSONAppService: NSObject {
         
     }
     
-    static func getSimilarProduct(params : Dictionary<String, AnyObject>, responsObjectKey: String!, completionHandler handler: (SVSimilarProductDetails? , NSError?) -> Void){
+    static func getSimilarProduct(params:Array<(key:String, value:AnyObject)>, responsObjectKey: String!, completionHandler handler: (SVSimilarProductDetails? , NSError?) -> Void){
         let URL = SVConstants.SIMILAR_PRODUCT_URL
         
         self.post(URL, params: params, responseObjectKey: responsObjectKey, completionHandler: handler)

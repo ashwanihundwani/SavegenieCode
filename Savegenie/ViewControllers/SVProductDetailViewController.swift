@@ -115,7 +115,7 @@ class SVProductDetailViewController: SVBaseViewController, UITableViewDataSource
     
     func getSimilarProducts() {
         if let pid = product?.identifier {
-            SVJSONAppService.getSimilarProduct(["product_sku_id": pid], responsObjectKey: "", completionHandler: { (details: SVSimilarProductDetails?, error) in
+            SVJSONAppService.getSimilarProduct([(key:"data[product_sku_id]", value:pid), (key:"data[store_id]", value:(SVStore.getCurrentStore()?.identifier)!)], responsObjectKey: "", completionHandler: { (details: SVSimilarProductDetails?, error) in
                 
                 if let _ = details {
                     if details?.similarProductsIds?.count > 0 {

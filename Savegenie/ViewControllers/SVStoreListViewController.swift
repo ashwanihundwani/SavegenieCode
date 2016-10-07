@@ -269,6 +269,8 @@ extension SVStoreListViewController : UITableViewDelegate, UITableViewDataSource
             
             self.selectedStore = store
             
+            SVStore.setCurrentStore(store);
+            
             SVVisitedStores.addStore(store)
             
             SVUtil.showLoader()

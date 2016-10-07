@@ -9,8 +9,10 @@
 import UIKit
 import ObjectMapper
 
+
+
 class SVStore: NSObject, Mappable, ISVStore {
-    
+    static var currentStoreInstance:SVStore? = nil;
     var identifier:String?
     var name:String?
     var image:String?
@@ -18,6 +20,16 @@ class SVStore: NSObject, Mappable, ISVStore {
     var storeRating:String?
     var slot:String?
     var date:String?
+    
+    static func getCurrentStore() -> SVStore? {
+        
+        return currentStoreInstance
+    }
+    
+    static func setCurrentStore(store:SVStore) {
+        
+        currentStoreInstance = store
+    }
     
     required init?(_ map: Map) {
         
