@@ -75,7 +75,7 @@ class SVStoreListViewController: SVBaseViewController {
     var masterCategories:SVMasterCategories?
     var resultCounter:Int = 0
     var commonSlot:SVCommonSlot? =  nil
-    var promos:SVStorePromos? = nil
+    var promos:SVDeals? = nil
     var selectedStore:SVStore? = nil
     
     override func navBarConfig() -> SVNavBarConfig {
@@ -276,6 +276,7 @@ extension SVStoreListViewController : UITableViewDelegate, UITableViewDataSource
             SVUtil.showLoader()
             self.fetchCategories(store)
             self.fetchPromos(store)
+            self.fetchSponsorProducts(store)
             
             if SVVisitedStores.multipleStoresVisited() {
                 
@@ -308,8 +309,6 @@ extension SVStoreListViewController : SVMultipleStoreViewDelegate {
             self.resultCounter = self.resultCounter + 1
             
             self.performActionBasedOnFetchedData()
-            
-            
         }
     }
     
@@ -317,7 +316,7 @@ extension SVStoreListViewController : SVMultipleStoreViewDelegate {
         
         let params:Array<(key:String, value:AnyObject)> = [("data[storeId]", store.identifier!)]
         
-        SVJSONAppService.fetchPromos(params, responsObjectKey: "") { (promos:SVStorePromos?, error:NSError?) in
+        SVJSONAppService.fetchPromos(params, responsObjectKey: "") { (promos:SVDeals?, error:NSError?) in
             
             if let _ = promos {
                 self.promos = promos
@@ -330,20 +329,18 @@ extension SVStoreListViewController : SVMultipleStoreViewDelegate {
         
     }
     
-//    private func fetchSponsorProducts(store:SVStore) {
-//        
-//        let params:Array<(key:String, value:AnyObject)> = [("data[store_id]", store.identifier!)]
-//        
-//        SVJSONAppService.fetchSponsoredProducts(params, responsObjectKey: "", completionHandler: { (SVSpon, <#NSError?#>) in
-//            <#code#>
-//        })(params, responsObjectKey: "") { (promo:SVDeals?, error:NSError?) in
-//            
-//            self.resultCounter = self.resultCounter + 1
-//            
-//            
-//        }
-//        
-//    }
+    private func fetchSponsorProducts(store:SVStore) {
+        
+        let params:Array<(key:String, value:AnyObject)> = [("data[storeId]", store.identifier!)]
+        
+        SVJSONAppService.fetchSponsoredProducts(params, responsObjectKey: "") { (slot:SVCommonSlot?, error:NSError?) in
+            
+            //TODO - Save the sponsor products Model to use it on subsequent screens.
+            
+            self.resultCounter = self.resultCounter + 1
+            self.performActionBasedOnFetchedData()
+        }
+    }
     
     
     private func fetchCommonSlot(store:SVStore) {
@@ -372,7 +369,7 @@ extension SVStoreListViewController : SVMultipleStoreViewDelegate {
     private func performActionBasedOnFetchedData() {
         // 3 will be 4 after sponsor products parsing
         if SVVisitedStores.multipleStoresVisited() == true
-            && self.resultCounter == 3 {
+            && self.resultCounter == 4 {
             
             self.resultCounter = 0
             SVUtil.hideLoader()
@@ -390,7 +387,7 @@ extension SVStoreListViewController : SVMultipleStoreViewDelegate {
             
         }
             // 2 will be 3 after sponsor products parsing
-        else if (self.resultCounter == 2 && SVVisitedStores.multipleStoresVisited() == false) {
+        else if (self.resultCounter == 3 && SVVisitedStores.multipleStoresVisited() == false) {
             
             SVUtil.hideLoader()
             self.resultCounter = 0

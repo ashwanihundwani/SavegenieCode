@@ -262,5 +262,28 @@ class SVCoreDataManager: NSObject {
         
         return nil
     }
+    
+    static internal func fetchCategoryWithId(identifier:String)-> ProductCategory? {
+        
+        let fetchRequest = NSFetchRequest(entityName: SVConstants.CATEGORY_DB_ENTITY)
+        
+        let predicate = NSPredicate(format: "identifier = %@", identifier)
+       
+        
+        fetchRequest.predicate = predicate
+        
+        do {
+            let products:Array<ProductCategory>? = try SVUtil.managedObjectContext().executeFetchRequest(fetchRequest) as? Array<ProductCategory>
+            
+            
+            return products?.count > 0 ? products![0] : nil
+            
+        }
+        catch {
+            
+        }
+        
+        return nil
+    }
 
 }

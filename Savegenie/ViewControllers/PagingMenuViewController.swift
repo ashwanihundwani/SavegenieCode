@@ -80,7 +80,7 @@ class PagingMenuViewController: SVBaseViewController {
             
             var params:Array<(key: String, value: AnyObject)> = Array<(key: String, value: AnyObject)>()
             
-            params.append(("data[storeId]", "41"))
+            params.append(("data[storeId]", (SVStore.getCurrentStore()?.identifier)!))
             params.append(("data[pmcId]", (controller.fetchCriteria?.masterCategoryId)!))
 
             

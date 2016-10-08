@@ -161,7 +161,7 @@ class SVProductCell: UITableViewCell {
         
         lblProductName.text = product.code
     
-        let mrpString = "Rs. \(Int(product.mrp!)!)"
+        let mrpString = "Rs. \(product.mrp!)"
         
         lblProductPrice.text = mrpString
         

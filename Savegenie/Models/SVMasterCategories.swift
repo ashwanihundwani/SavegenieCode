@@ -45,4 +45,14 @@ class SVMasterCategories: NSObject, Mappable {
         
         categories <- map["response"]
     }
+    
+    //Public Helper Methods
+    subscript(index:Int)-> SVCategory {
+        
+        return categories![index]
+    }
+    func count() -> Int {
+        
+        return categories!.count
+    }
 }

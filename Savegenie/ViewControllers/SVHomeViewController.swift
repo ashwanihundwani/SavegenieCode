@@ -23,7 +23,7 @@ class SVHomeViewController: SVBaseViewController, UICollectionViewDelegate, UICo
     var store:SVStore?
     var categories:Array<ProductCategory> = Array<ProductCategory>()
     var masterCategories:SVMasterCategories?
-    var promos:SVStorePromos?
+    var promos:SVDeals?
     
     //MARK: Overridden Methods
     override func navBarConfig() -> SVNavBarConfig {
@@ -137,43 +137,35 @@ extension SVHomeViewController {
     //MARK: Collection View Delegate Methods
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
-        //TODO: Remove this check for promo, Best Sell and Favourites
-        if indexPath.row != 2 {
+        let category:SVCategory = self.masterCategories![indexPath.row];
+        
+        //Alcoholic Category
+        if (category.identifier == "12") {
             
-            if indexPath.row >= TOTAL_OTHER_CATEGORIES {
-                let category:ProductCategory = categories[indexPath.row - TOTAL_OTHER_CATEGORIES]
+            let alert = UIAlertController(title: SVConstants.APP_NAME, message: "Please confirm if you are above 18 years of age. No delivery to minors", preferredStyle: UIAlertControllerStyle.Alert)
+            
+            
+            alert.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.Cancel, handler: nil))
+            
+            alert.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.Default, handler:  { (action:UIAlertAction) in
                 
-                //Alcoholic
-                if category.identifier! == "12" && (category.name?.containsString("Alcoholic"))! {
-                    
-                    let alert = UIAlertController(title: SVConstants.APP_NAME, message: "Please confirm if you are above 18 years of age. No delivery to minors", preferredStyle: UIAlertControllerStyle.Alert)
-                    
-                    
-                    alert.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.Cancel, handler: nil))
-                    
-                    alert.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.Default, handler:  { (action:UIAlertAction) in
-                        
-                        self.performSegueWithIdentifier("PagingControllerSegue", sender: indexPath)
-                    }))
-                    
-                    self.presentViewController(alert, animated: true, completion: nil)
-                }
-                else {
-                    self.performSegueWithIdentifier("PagingControllerSegue", sender: indexPath)
-                }
-            }
-            else {
                 self.performSegueWithIdentifier("PagingControllerSegue", sender: indexPath)
-            }
+            }))
             
-            
-        }
-        else {
-
-            self.navigationController?.pushViewController(SVUtil.getVCWithIdentifier("SVFavoriteProductListViewController"), animated: true)
-            
+            self.presentViewController(alert, animated: true, completion: nil)
         }
         
+        else if (category.name == "Promo" || category.name == "Best Selling") {
+            
+             self.performSegueWithIdentifier("PagingControllerSegue", sender: indexPath)
+        }
+        else if (category.name == "Favourite") {
+        self.navigationController?.pushViewController(SVUtil.getVCWithIdentifier("SVFavoriteProductListViewController"), animated: true)
+        }
+        else {
+            
+            self.performSegueWithIdentifier("PagingControllerSegue", sender: indexPath)
+        }
         
     }
     
@@ -183,15 +175,16 @@ extension SVHomeViewController {
     private func viewTypeForIndexPath(indexPath:NSIndexPath) -> PagingViewType {
         
         var viewType:PagingViewType = .Category
-        switch indexPath.row {
-        case PROMO_INDEX:
-             viewType = .Promo
-        case BEST_SELLING_INDEX:
+        
+        let masterCat:SVCategory = self.masterCategories![indexPath.row];
+        
+        if (masterCat.name == "Promo") {
+            
+            viewType = .Promo
+        }
+        else if (masterCat.name == "Best Selling") {
+            
             viewType = .BestSelling
-        case FAVOURITES_INDEX:
-            viewType = .Favourite
-        default:
-            viewType = .Category
         }
         
         return viewType
@@ -200,14 +193,12 @@ extension SVHomeViewController {
     
     private func controllersAndMenuOptionsForIndexPath(indexPath:NSIndexPath)-> (controllers:Array<UIViewController>, menuOptions:CategoriesMenu, showFilter:Bool) {
         
-        var cat:ProductCategory? = nil
+        let cat:SVCategory? = self.masterCategories![indexPath.row];
+
+        let prodCat:ProductCategory? = SVCoreDataManager.fetchCategoryWithId(cat!.identifier!);
         
-        if indexPath.row >= TOTAL_OTHER_CATEGORIES {
-            
-            cat = self.categories[indexPath.row - TOTAL_OTHER_CATEGORIES]
-        }
         
-        let helper:PagingMenuHelper = PagingMenuHelper(viewType: viewTypeForIndexPath(indexPath), category: cat)
+        let helper:PagingMenuHelper = PagingMenuHelper(viewType: viewTypeForIndexPath(indexPath), category: prodCat)
         
         return helper.pagingConfig!
         

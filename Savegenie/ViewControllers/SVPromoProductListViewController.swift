@@ -29,7 +29,7 @@ class SVPromoProductListViewController: SVProductListViewController {
         
         var params:Array<(key: String, value: AnyObject)> = Array<(key: String, value: AnyObject)>()
         
-        params.append(("data[storeId]", "41"))
+        params.append(("data[storeId]", (SVStore.getCurrentStore()?.identifier)!))
         params.append(("data[pmcId]", (self.fetchCriteria?.masterCategoryId)!))
 
         SVJSONAppService.fetchDeals(params, responsObjectKey: "") { (deals:SVDeals?, error:NSError?) in
