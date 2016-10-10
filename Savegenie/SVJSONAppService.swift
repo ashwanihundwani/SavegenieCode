@@ -304,7 +304,7 @@ class SVJSONAppService: NSObject {
         
     }
     
-    static func fetchSponsoredProducts(params:Array<(key:String, value:AnyObject)>, responsObjectKey: String!, completionHandler handler: (SVCommonSlot? , NSError?) -> Void){
+    static func fetchSponsoredProducts(params:Array<(key:String, value:AnyObject)>, responsObjectKey: String!, completionHandler handler: (SVSponsoredProduct? , NSError?) -> Void){
         
         let URL = SVConstants.SPONSORED_PRODUCTS
         

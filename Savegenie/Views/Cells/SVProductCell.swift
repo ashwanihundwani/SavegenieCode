@@ -23,6 +23,7 @@ class SVProductCell: UITableViewCell {
     @IBOutlet weak var imgProduct:UIImageView!
     @IBOutlet weak var lblQuantity:UILabel!
     @IBOutlet weak var imgOpenPromo:UIImageView!
+    @IBOutlet weak var sponsoredLabel: UILabel!
     
     var dbProduct:Product? = nil
     var dealProd:SVDealProduct? = nil
@@ -71,6 +72,10 @@ class SVProductCell: UITableViewCell {
     }
 
     //MARK: Public methods
+    func showSponsoredTag(show: Bool) {
+        sponsoredLabel.hidden = !show
+    }
+    
     internal func setProduct(product : SVProductModel) {
         
         lblProductName.text = product.productName

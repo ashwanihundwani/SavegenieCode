@@ -13,6 +13,8 @@ import CoreData
 class Product: NSManagedObject {
 
 // Insert code here to add functionality to your managed object subclass
+    
+    var sponsored = false
 
     internal func prepareWithDict(dict:Dictionary<String, AnyObject>) {
         

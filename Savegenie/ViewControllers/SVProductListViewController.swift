@@ -8,6 +8,8 @@
 
 import UIKit
 
+let sponsopredProductMaxLimit = 3
+
 class SVProductListViewController: SVBaseViewController, UITableViewDataSource, UITableViewDelegate, SVFilterViewDelegate, SVProductCellDelegate {
 
     @IBOutlet weak var tableView:UITableView!
@@ -22,6 +24,8 @@ class SVProductListViewController: SVBaseViewController, UITableViewDataSource, 
     var fetchCriteria:SVProductFilterCriteria? = nil
     
     var selectedCategory:ProductCategory? = nil
+    
+    var sponsoredProductArray = SVSponsoredProduct.getSponsoredProductsArray()
     
     //MARK: Protected Methods
     
@@ -56,9 +60,39 @@ class SVProductListViewController: SVBaseViewController, UITableViewDataSource, 
     internal func reloadData()
     {
         if let criteria = fetchCriteria {
-            
-            products = SVCoreDataManager.filterProductsForCriteria(criteria)
-            
+            var productArray = SVCoreDataManager.filterProductsForCriteria(criteria)
+            if let _ = sponsoredProductArray, _ = productArray {
+                
+                var sponsopredProductIndex = Array<Int>()
+                for sponsoredProduct in sponsoredProductArray! {
+                    for (index, product) in productArray!.enumerate() {
+                        
+                        if sponsoredProduct.productSKUId?.componentsSeparatedByString("-").contains(product.identifier!) == true {
+                            sponsopredProductIndex.append(index)
+                        }
+                        
+                        if sponsopredProductIndex.count >= sponsopredProductMaxLimit {
+                            break
+                        }
+                    }
+                    
+                    if sponsopredProductIndex.count >= sponsopredProductMaxLimit {
+                        break
+                    }
+                }
+                
+                for index in sponsopredProductIndex {
+                    let product = productArray![index]
+                    product.sponsored = true
+                    productArray!.insert(product, atIndex: 0)
+                    productArray!.removeAtIndex(index + 1)
+                }
+                
+                products = productArray
+            }
+            else {
+                products = SVCoreDataManager.filterProductsForCriteria(criteria)
+            }
         }
         
         showUIBasedOnTotalProducts()
@@ -101,12 +135,14 @@ class SVProductListViewController: SVBaseViewController, UITableViewDataSource, 
     internal func prepareCell(cell:SVProductCell, product:Product) {
         
         cell.setDBProduct(product)
+        cell.showSponsoredTag(product.sponsored)
         
     }
     
     internal func cellForIndexPath(indexPath:NSIndexPath)-> UITableViewCell
     {
         let tableCell:SVProductCell = (tableView.dequeueReusableCellWithIdentifier(String(SVProductCell)) as? SVProductCell)!
+        //tableCell.showSponsoredTag(indexPath.row < sponsopredProductIndex.count)
         
         tableCell.delegate = self
         
@@ -144,14 +180,14 @@ class SVProductListViewController: SVBaseViewController, UITableViewDataSource, 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.reloadData()
+        //self.reloadData()
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.view.backgroundColor = UIColor(hexString: "EEEEEE")   
-        
+        self.reloadData()
     }
 
     override func didReceiveMemoryWarning() {

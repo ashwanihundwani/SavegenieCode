@@ -333,10 +333,10 @@ extension SVStoreListViewController : SVMultipleStoreViewDelegate {
         
         let params:Array<(key:String, value:AnyObject)> = [("data[storeId]", store.identifier!)]
         
-        SVJSONAppService.fetchSponsoredProducts(params, responsObjectKey: "") { (slot:SVCommonSlot?, error:NSError?) in
+        SVJSONAppService.fetchSponsoredProducts(params, responsObjectKey: "") { (sponsoredProduct: SVSponsoredProduct?, error:NSError?) in
             
             //TODO - Save the sponsor products Model to use it on subsequent screens.
-            
+            SVSponsoredProduct.setSponsoredProductsArray(sponsoredProduct?.spProdArray)
             self.resultCounter = self.resultCounter + 1
             self.performActionBasedOnFetchedData()
         }
