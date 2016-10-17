@@ -143,6 +143,16 @@ class SVCoreDataManager: NSObject {
             
         }
         
+        if let storeId = criteria.storeID {
+            arguments.append("Store-\(storeId)")
+            if firstAdded == true {
+                predicateFormat = predicateFormat + " AND "
+            }
+            
+            firstAdded = true
+            
+            predicateFormat = predicateFormat + "storePrices CONTAINS[CD] %@"
+        }
         
         let predicate = NSPredicate(format: predicateFormat, argumentArray: arguments)
         
@@ -278,24 +288,6 @@ class SVCoreDataManager: NSObject {
             
             return products?.count > 0 ? products![0] : nil
             
-        }
-        catch {
-            
-        }
-        
-        return nil
-    }
-    
-    static internal func getProductsForStoreId(storeId: String)->Array<Product>? {
-        
-        let fetchRequest = NSFetchRequest(entityName: SVConstants.PRODUCT_DB_ENTITY)
-        
-        let predicate = NSPredicate(format: "storePrices CONTAINS %@", "Store-\(storeId)")
-        fetchRequest.predicate = predicate
-        
-        do {
-            let products:Array<Product>? = try SVUtil.managedObjectContext().executeFetchRequest(fetchRequest) as? Array<Product>
-            return products
         }
         catch {
             
