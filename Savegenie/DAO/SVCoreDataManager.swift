@@ -285,5 +285,22 @@ class SVCoreDataManager: NSObject {
         
         return nil
     }
-
+    
+    static internal func getProductsForStoreId(storeId: String)->Array<Product>? {
+        
+        let fetchRequest = NSFetchRequest(entityName: SVConstants.PRODUCT_DB_ENTITY)
+        
+        let predicate = NSPredicate(format: "storePrices CONTAINS %@", "Store-\(storeId)")
+        fetchRequest.predicate = predicate
+        
+        do {
+            let products:Array<Product>? = try SVUtil.managedObjectContext().executeFetchRequest(fetchRequest) as? Array<Product>
+            return products
+        }
+        catch {
+            
+        }
+        
+        return nil
+    }
 }

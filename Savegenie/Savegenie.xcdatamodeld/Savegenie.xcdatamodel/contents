@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15C50" minimumToolsVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15A284" minimumToolsVersion="Automatic">
     <entity name="SVProduct" representedClassName="Product" syncable="YES">
         <attribute name="categoryId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="dealActive" optional="YES" attributeType="Boolean" syncable="YES"/>
@@ -15,6 +15,7 @@
         <attribute name="promoDealActive" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="quantity" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="size" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="storePrices" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="unit" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SVProductCategory" inverseName="products" inverseEntity="SVProductCategory" syncable="YES"/>
         <relationship name="masterCategory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SVProductCategory" syncable="YES"/>
@@ -31,7 +32,7 @@
         <relationship name="products" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SVProduct" inverseName="category" inverseEntity="SVProduct" syncable="YES"/>
     </entity>
     <elements>
-        <element name="SVProduct" positionX="-45" positionY="45" width="128" height="300"/>
+        <element name="SVProduct" positionX="-45" positionY="45" width="128" height="315"/>
         <element name="SVProductCategory" positionX="-63" positionY="-18" width="128" height="180"/>
     </elements>
 </model>

@@ -69,7 +69,20 @@ class Product: NSManagedObject {
             self.masterCategory = cat
         }
         
+        let allStoreKeys = dict.keys.filter { (key) -> Bool in
+            return key.hasPrefix("Store")
+        }
         
+        if allStoreKeys.count > 0 {
+            var storePriceDict = Dictionary<String, String>()
+            for storeKey in allStoreKeys {
+                let price = dict[storeKey] as? String
+                if let _ = price where Int(price!) != 0 {
+                    storePriceDict[storeKey] = price!
+                }
+            }
+            
+            self.storePrices = storePriceDict.description
+        }
     }
-    
 }
