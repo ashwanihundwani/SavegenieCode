@@ -443,4 +443,18 @@ class SVUtil : NSObject
         }
 
     }
+    
+    static func convertStringToDictionary(text: String) -> [String: AnyObject]? {
+        var newText = text.stringByReplacingOccurrencesOfString("[", withString: "{")
+        newText = newText.stringByReplacingOccurrencesOfString("]", withString: "}")
+        
+        if let data = newText.dataUsingEncoding(NSUTF8StringEncoding) {
+            do {
+                return try NSJSONSerialization.JSONObjectWithData(data, options: []) as? [String:AnyObject]
+            } catch let error as NSError {
+                print(error)
+            }
+        }
+        return nil
+    }
 }
