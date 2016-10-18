@@ -118,9 +118,7 @@ class SVProductCell: UITableViewCell {
                                     length:mrpString.characters.count))
         
         var disountString = ""
-        if let storeId = SVStore.getCurrentStore()?.identifier {
-            let storePriceDict = SVUtil.convertStringToDictionary(product.storePrices!)
-            let price = storePriceDict!["Store-\(storeId)"] as! String
+        if let storeId = SVStore.getCurrentStore()?.identifier, let storePriceDict = SVUtil.convertStringToDictionary(product.storePrices!), let price = storePriceDict["Store-\(storeId)"] as? String {            
             disountString = " Rs. \(price)"
         }
         else {
