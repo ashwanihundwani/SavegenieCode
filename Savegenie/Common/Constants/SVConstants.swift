@@ -108,7 +108,7 @@ internal class SVConstants: NSObject {
     static internal let SETTINGS_URL:String = SERVER_URL + "Pages/androidGetAndroidSettings.json"
     
     
-    static internal let DATA_ZIP_URL:String = "http://data.savegenie.mu/mobilejson/savegenie-test-mu.zip"
+    static internal let DATA_ZIP_URL:String = "http://data.savegenie.mu/mobilejson/savegenie-dev-mu.zip"
     
     //static internal let DATA_ZIP_URL:String = "http://data.savegenie.mu/mobilejson/savegenie-dev-mu.zip"
     
