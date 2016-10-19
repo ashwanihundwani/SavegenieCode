@@ -117,8 +117,14 @@ class SVProductCell: UITableViewCell {
                                     location:0,
                                     length:mrpString.characters.count))
         
-        let disountString = " Rs. \(product.discountedPrice!.integerValue)"
-    
+        var disountString = ""
+        if let storeId = SVStore.getCurrentStore()?.identifier, let storePriceDict = SVUtil.convertStringToDictionary(product.storePrices!), let price = storePriceDict["Store-\(storeId)"] as? String {            
+            disountString = " Rs. \(price)"
+        }
+        else {
+            disountString = " Rs. \(product.discountedPrice!.integerValue)"
+        }
+
         let attrDiscountText:NSMutableAttributedString = NSMutableAttributedString(string: disountString)
         
         attrDiscountText.addAttribute(NSFontAttributeName,

@@ -43,6 +43,7 @@
 		CB6FB8AF1DA0DFD900BFA67F /* SVProductImageCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6FB8AE1DA0DFD900BFA67F /* SVProductImageCollectionCell.swift */; };
 		CB894B3B1DA4115000B582A2 /* SVSimilarProductDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB894B3A1DA4115000B582A2 /* SVSimilarProductDetails.swift */; };
 		CB894B3D1DA4173600B582A2 /* SVSimilarProductTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB894B3C1DA4173600B582A2 /* SVSimilarProductTableCell.swift */; };
+		CBE966501DB54C200052E741 /* SVSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE9664F1DB54C200052E741 /* SVSettings.swift */; };
 		E7010BCE1D3213B80097E0DD /* SVTextAppService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7010BCD1D3213B80097E0DD /* SVTextAppService.swift */; };
 		E7010BD01D3240BB0097E0DD /* SVFavoriteProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7010BCF1D3240BB0097E0DD /* SVFavoriteProductListViewController.swift */; };
 		E702540E1D243E1600B2A8F4 /* SVProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E702540D1D243E1600B2A8F4 /* SVProfileViewController.swift */; };
@@ -191,6 +192,7 @@
 		CB6FB8AE1DA0DFD900BFA67F /* SVProductImageCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVProductImageCollectionCell.swift; sourceTree = "<group>"; };
 		CB894B3A1DA4115000B582A2 /* SVSimilarProductDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVSimilarProductDetails.swift; sourceTree = "<group>"; };
 		CB894B3C1DA4173600B582A2 /* SVSimilarProductTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVSimilarProductTableCell.swift; sourceTree = "<group>"; };
+		CBE9664F1DB54C200052E741 /* SVSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVSettings.swift; sourceTree = "<group>"; };
 		DD2886C223E9EEB537C39C07 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		E7010BCD1D3213B80097E0DD /* SVTextAppService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVTextAppService.swift; sourceTree = "<group>"; };
 		E7010BCF1D3240BB0097E0DD /* SVFavoriteProductListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVFavoriteProductListViewController.swift; sourceTree = "<group>"; };
@@ -418,6 +420,7 @@
 				CB374E131DA2C99D008B9FA2 /* SVProductDetails.swift */,
 				CB894B3A1DA4115000B582A2 /* SVSimilarProductDetails.swift */,
 				CB073B861DABEDF0009A5460 /* SVSponsoredProduct.swift */,
+				CBE9664F1DB54C200052E741 /* SVSettings.swift */,
 			);
 			name = "Response Models";
 			sourceTree = "<group>";
@@ -827,6 +830,7 @@
 				E79852D41D55CE3D00D68B08 /* SVAddShippingAddress.swift in Sources */,
 				E734CE1B1D2641FC00F8F99A /* SVDownloadService.swift in Sources */,
 				E7FF1ACF1D151D15009FE8E2 /* SVConstants.swift in Sources */,
+				CBE966501DB54C200052E741 /* SVSettings.swift in Sources */,
 				E7010BD01D3240BB0097E0DD /* SVFavoriteProductListViewController.swift in Sources */,
 				E726D46F1D1E44AD000D86E4 /* SVProductViewController.swift in Sources */,
 				E70CA1731D22F9AB0054ECAD /* XMLParser.swift in Sources */,

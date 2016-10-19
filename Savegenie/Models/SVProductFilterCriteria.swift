@@ -16,4 +16,5 @@ class SVProductFilterCriteria: NSObject {
     var categoryId:String? = nil
     var masterCategoryId:String? = nil
     var productTypeId:String? = nil
+    var storeID: String?
 }

@@ -143,6 +143,16 @@ class SVCoreDataManager: NSObject {
             
         }
         
+        if let storeId = criteria.storeID {
+            arguments.append("Store-\(storeId)")
+            if firstAdded == true {
+                predicateFormat = predicateFormat + " AND "
+            }
+            
+            firstAdded = true
+            
+            predicateFormat = predicateFormat + "storePrices CONTAINS[CD] %@"
+        }
         
         let predicate = NSPredicate(format: predicateFormat, argumentArray: arguments)
         
@@ -285,5 +295,4 @@ class SVCoreDataManager: NSObject {
         
         return nil
     }
-
 }

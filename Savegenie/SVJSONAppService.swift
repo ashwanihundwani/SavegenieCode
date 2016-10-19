@@ -327,4 +327,10 @@ class SVJSONAppService: NSObject {
         
         self.post(URL, params: params, responseObjectKey: responsObjectKey, completionHandler: handler)
     }
+    
+    static func getSettings(completionHandler handler: (SVSettings? , NSError?) -> Void){
+        let URL = SVConstants.SETTINGS_URL
+        
+        self.get(URL, params: nil, responseObjectKey: "", completionHandler: handler)
+    }
 }

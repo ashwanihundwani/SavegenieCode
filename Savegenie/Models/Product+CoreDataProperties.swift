@@ -31,6 +31,6 @@ extension Product {
     @NSManaged var masterCategory: ProductCategory?
     @NSManaged var isFavorite: NSNumber?
     @NSManaged var quantity: NSNumber?
-    
+    @NSManaged var storePrices: String?
 
 }

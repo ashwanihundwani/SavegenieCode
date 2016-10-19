@@ -60,6 +60,7 @@ class SVProductListViewController: SVBaseViewController, UITableViewDataSource, 
     internal func reloadData()
     {
         if let criteria = fetchCriteria {
+            fetchCriteria?.storeID = SVStore.getCurrentStore()?.identifier
             var productArray = SVCoreDataManager.filterProductsForCriteria(criteria)
             if let _ = sponsoredProductArray, _ = productArray {
                 
