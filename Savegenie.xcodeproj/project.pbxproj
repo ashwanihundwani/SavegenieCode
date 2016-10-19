@@ -1022,14 +1022,14 @@
 			baseConfigurationReference = DD2886C223E9EEB537C39C07 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				INFOPLIST_FILE = Savegenie/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.nikoot.ios;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Eweblabs.Savegenie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "d5e5e0f9-ee8f-47a8-9123-7d60117d8e12";
+				PROVISIONING_PROFILE = "a49a39fb-dc29-4288-abdf-495501f69d02";
 			};
 			name = Debug;
 		};
@@ -1038,14 +1038,14 @@
 			baseConfigurationReference = 164F76EAD2C333F7A010CA3F /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				INFOPLIST_FILE = Savegenie/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.nikoot.ios;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Eweblabs.Savegenie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "d5e5e0f9-ee8f-47a8-9123-7d60117d8e12";
+				PROVISIONING_PROFILE = "a49a39fb-dc29-4288-abdf-495501f69d02";
 			};
 			name = Release;
 		};
