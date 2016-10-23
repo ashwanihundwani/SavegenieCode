@@ -369,7 +369,7 @@ extension SVStoreListViewController : SVMultipleStoreViewDelegate {
     private func performActionBasedOnFetchedData() {
         // 3 will be 4 after sponsor products parsing
         if SVVisitedStores.multipleStoresVisited() == true
-            && self.resultCounter == 4 {
+            && (self.resultCounter == 4)  && self.commonSlot?.date != nil {
             
             self.resultCounter = 0
             SVUtil.hideLoader()
