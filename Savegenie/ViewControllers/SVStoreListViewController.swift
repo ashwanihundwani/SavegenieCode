@@ -320,6 +320,7 @@ extension SVStoreListViewController : SVMultipleStoreViewDelegate {
             
             if let _ = promos {
                 self.promos = promos
+                SVDeals.setCurrentDeals(promos)
             }
             self.resultCounter = self.resultCounter + 1
             

@@ -137,7 +137,32 @@ class SVProductListViewController: SVBaseViewController, UITableViewDataSource, 
         
         cell.setDBProduct(product)
         cell.showSponsoredTag(product.sponsored)
+        cell.showOfferLabel(getOfferForProduct(product))
         
+    }
+    
+    func getOfferForProduct(product: Product) -> Bool {
+        let coupons = SVDeals.getCurrentDeals()?.coupons
+        var totalOfferProduct = Array<String>()
+        if let _ = coupons {
+            for promo in coupons! {
+                
+                
+                if let buyPIds = promo.buyProductIds {
+                    for pId in buyPIds {
+                        totalOfferProduct.append(pId)
+                    }
+                }
+                
+                if let getPIds = promo.getProductIds {
+                    for pId in getPIds {
+                        totalOfferProduct.append(pId)
+                    }
+                }
+            }
+        }
+        
+        return totalOfferProduct.contains(product.identifier!)
     }
     
     internal func cellForIndexPath(indexPath:NSIndexPath)-> UITableViewCell

@@ -93,8 +93,20 @@ class SVDeal: NSObject,Mappable {
 
 
 class SVDeals: NSObject, Mappable {
+    static var currentOfferDeals :SVDeals? = nil;
     
     var deals:Array<SVDeal> = Array<SVDeal>()
+    var coupons: Array<SVStorePromo> = Array<SVStorePromo>()
+    
+    static func getCurrentDeals() -> SVDeals? {
+        
+        return currentOfferDeals
+    }
+    
+    static func setCurrentDeals(deals: SVDeals?) {
+        
+        currentOfferDeals = deals
+    }
     
     required init?(_ map: Map) {
         
@@ -104,7 +116,7 @@ class SVDeals: NSObject, Mappable {
     func mapping(map: Map) {
         
         deals <- map["response"]
-        
+        coupons <- map["coupon"]
     }
 
 

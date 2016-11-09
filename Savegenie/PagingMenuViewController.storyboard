@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="poJ-9M-ZJD">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="poJ-9M-ZJD">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -492,9 +492,9 @@
                                                     <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                                                 </view>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="openpromo" translatesAutoresizingMaskIntoConstraints="NO" id="gfW-s0-aNo">
-                                                    <rect key="frame" x="0.0" y="0.0" width="70" height="20"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="70" height="16"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="20" id="ImK-oz-H6B"/>
+                                                        <constraint firstAttribute="height" constant="16" id="ImK-oz-H6B"/>
                                                         <constraint firstAttribute="width" constant="70" id="Kb5-BG-Ahc"/>
                                                     </constraints>
                                                 </imageView>
@@ -507,6 +507,17 @@
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="9"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OFFER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NEf-xu-XiT">
+                                                    <rect key="frame" x="0.0" y="2" width="90" height="15"/>
+                                                    <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="90" id="MMy-EW-ZFh"/>
+                                                        <constraint firstAttribute="height" constant="15" id="tsg-qq-lqq"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <color key="textColor" red="0.0" green="0.50196078431372548" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -527,7 +538,9 @@
                                                 <constraint firstItem="tOz-xX-DoA" firstAttribute="leading" secondItem="8La-U7-1l8" secondAttribute="leading" id="ZGN-Qq-7Ae"/>
                                                 <constraint firstAttribute="trailing" secondItem="si4-Ec-KTu" secondAttribute="trailing" constant="3" id="ZQQ-fd-h6y"/>
                                                 <constraint firstItem="iJc-9q-8dW" firstAttribute="top" secondItem="tOz-xX-DoA" secondAttribute="bottom" id="au0-Cb-kxo"/>
+                                                <constraint firstItem="NEf-xu-XiT" firstAttribute="centerX" secondItem="tOz-xX-DoA" secondAttribute="centerX" id="d3c-VD-EnO"/>
                                                 <constraint firstAttribute="trailing" secondItem="iJc-9q-8dW" secondAttribute="trailing" id="eRH-nW-aqQ"/>
+                                                <constraint firstItem="NEf-xu-XiT" firstAttribute="top" secondItem="8La-U7-1l8" secondAttribute="top" constant="2" id="eme-af-COP"/>
                                                 <constraint firstAttribute="bottom" secondItem="iJc-9q-8dW" secondAttribute="bottom" constant="1" id="ezd-tZ-Qpe"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="zbx-yP-TPa" secondAttribute="bottom" constant="13" id="jXg-0Y-Hih"/>
                                                 <constraint firstItem="EOs-vx-PZ5" firstAttribute="leading" secondItem="tOz-xX-DoA" secondAttribute="trailing" constant="8" id="jgF-Tc-Zny"/>
@@ -549,6 +562,7 @@
                                             <outlet property="lblProductName" destination="qqf-6I-CL5" id="fto-Wu-yIP"/>
                                             <outlet property="lblProductPrice" destination="EOs-vx-PZ5" id="U36-f3-ySJ"/>
                                             <outlet property="lblQuantity" destination="zbx-yP-TPa" id="CZI-xa-QgF"/>
+                                            <outlet property="offerLabel" destination="NEf-xu-XiT" id="6py-60-Hch"/>
                                             <outlet property="sponsoredLabel" destination="JlG-8u-oPg" id="VXH-EZ-yRG"/>
                                         </connections>
                                     </tableViewCell>
@@ -609,7 +623,7 @@
                                         <rect key="frame" x="0.0" y="28" width="580" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9pN-mD-NDK" id="0iS-l7-bb5">
-                                            <rect key="frame" x="0.0" y="0.0" width="580" height="99"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="580" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Product Image" translatesAutoresizingMaskIntoConstraints="NO" id="7Sf-lW-l1G">
