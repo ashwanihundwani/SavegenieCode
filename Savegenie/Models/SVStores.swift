@@ -72,7 +72,7 @@ class SVStore: NSObject, Mappable, ISVStore {
     var rating:Int {
         get{
             
-            return Int(self.storeRating!)!
+            return Int(Float(self.storeRating!)!)
         }
     }
     var deliveryTime:String {
