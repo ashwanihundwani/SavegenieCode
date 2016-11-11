@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -87,6 +87,7 @@
             <string>HelveticaNeue-Bold</string>
             <string>HelveticaNeue-Medium</string>
             <string>HelveticaNeue-Medium</string>
+            <string>HelveticaNeue-Medium</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -113,8 +114,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yds-Em-KIe" userLabel="Separator">
-                                                    <rect key="frame" x="0.0" y="58" width="600" height="1"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yds-Em-KIe" userLabel="Separator">
+                                                    <rect key="frame" x="0.0" y="59" width="600" height="1"/>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="1" id="voO-5E-whW"/>
@@ -260,9 +261,19 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Checkout" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u1C-uh-sPg">
-                                <rect key="frame" x="8" y="564" width="544" height="21"/>
+                                <rect key="frame" x="8" y="564" width="392" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="OcU-FL-aWp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rs 0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kpj-KE-eKz">
+                                <rect key="frame" x="384" y="564" width="150" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="EQO-Rc-9KY"/>
+                                    <constraint firstAttribute="height" constant="21" id="Igd-sp-Mj8"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -287,6 +298,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="POX-aB-0wk" firstAttribute="centerY" secondItem="cr7-AQ-SlO" secondAttribute="centerY" id="1Tj-Sa-pxI"/>
+                            <constraint firstItem="9F2-2Q-CdX" firstAttribute="leading" secondItem="Kpj-KE-eKz" secondAttribute="trailing" constant="26" id="9Qz-8f-Oyh"/>
                             <constraint firstAttribute="trailing" secondItem="POX-aB-0wk" secondAttribute="trailing" id="D85-5j-Wwa"/>
                             <constraint firstItem="wrO-HH-pgl" firstAttribute="top" secondItem="53h-Ji-oyg" secondAttribute="bottom" id="IqV-VY-58f"/>
                             <constraint firstItem="u1C-uh-sPg" firstAttribute="leading" secondItem="cr7-AQ-SlO" secondAttribute="leading" constant="8" id="Lqd-My-7id"/>
@@ -298,9 +310,10 @@
                             <constraint firstAttribute="trailing" secondItem="9F2-2Q-CdX" secondAttribute="trailing" constant="10" id="Z5P-Hd-gHE"/>
                             <constraint firstItem="u1C-uh-sPg" firstAttribute="top" secondItem="POX-aB-0wk" secondAttribute="bottom" constant="14" id="feT-Fr-GXz"/>
                             <constraint firstItem="wrO-HH-pgl" firstAttribute="top" secondItem="POX-aB-0wk" secondAttribute="bottom" constant="50" id="l0x-Ub-hy9"/>
-                            <constraint firstAttribute="trailing" secondItem="u1C-uh-sPg" secondAttribute="trailing" constant="48" id="mmr-dV-oPj"/>
                             <constraint firstAttribute="trailing" secondItem="53h-Ji-oyg" secondAttribute="trailing" id="p44-P0-0ZX"/>
+                            <constraint firstItem="Kpj-KE-eKz" firstAttribute="leading" secondItem="u1C-uh-sPg" secondAttribute="trailing" constant="-16" id="sQl-8B-bpt"/>
                             <constraint firstItem="wrO-HH-pgl" firstAttribute="top" secondItem="0tq-En-5h6" secondAttribute="bottom" id="tWD-Sh-f3T"/>
+                            <constraint firstItem="Kpj-KE-eKz" firstAttribute="centerY" secondItem="0tq-En-5h6" secondAttribute="centerY" id="w0S-iS-F55"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -311,6 +324,7 @@
                     <navigationItem key="navigationItem" id="Wme-Am-WJI"/>
                     <connections>
                         <outlet property="tableView" destination="POX-aB-0wk" id="GF1-aa-SA5"/>
+                        <outlet property="totalPriceLabel" destination="Kpj-KE-eKz" id="TJZ-UX-woE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nMH-IV-3O3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -420,7 +434,7 @@
                                         <rect key="frame" x="0.0" y="28" width="580" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="O0q-0Z-OwC" id="L5a-Rd-4HC">
-                                            <rect key="frame" x="0.0" y="0.0" width="580" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="580" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cH1-30-x4z">

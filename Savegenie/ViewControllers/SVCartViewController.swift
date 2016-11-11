@@ -12,6 +12,7 @@ class SVCartViewController: SVBaseViewController, UITableViewDataSource, SVCartP
 
     
     @IBOutlet weak var tableView:UITableView!
+    @IBOutlet weak var totalPriceLabel: UILabel!
     
     var cart:SVCart? = nil
     var cartId:String? = nil
@@ -141,6 +142,18 @@ class SVCartViewController: SVBaseViewController, UITableViewDataSource, SVCartP
         
     }
     
+    private func setTotalPrice() {
+        var totalPrice = 0
+        if cart?.products.count > 0 {
+            for cartProduct in (cart?.products)! {
+                if let _ = cartProduct.mrp, price = Int(cartProduct.mrp!) {
+                    totalPrice += price
+                }
+            }
+        }
+        
+        totalPriceLabel.text = "Rs \(totalPrice)"
+    }
     
     //MARK: Table View datasource Methods
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -168,6 +181,8 @@ class SVCartViewController: SVBaseViewController, UITableViewDataSource, SVCartP
         
         
         self.prepareCell(tableCell, product:product!)
+        
+        setTotalPrice()
         
         return tableCell
     }

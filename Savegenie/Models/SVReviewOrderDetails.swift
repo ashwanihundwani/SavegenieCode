@@ -119,7 +119,7 @@ class SVReviewOrderDetails: NSObject, Mappable {
             
         }
         
-        if let deliveryItem:Dictionary<String, AnyObject> = response![1] {
+        if response?.count > 1, let deliveryItem:Dictionary<String, AnyObject> = response?[1] {
             
             self.orderDetails?.priceAtMrp = deliveryItem["priceatmrp"] as? String
             self.orderDetails?.priceAfterDeal = deliveryItem["priceafterdeal"] as? String
@@ -130,7 +130,7 @@ class SVReviewOrderDetails: NSObject, Mappable {
             netPrice = deliveryItem["netprice"] as? String
         }
         
-        if let allItems = response?[2] {
+        if response?.count > 2, let allItems = response?[2] {
             
             orderItems <- map["response.2.allitem"]
             
