@@ -8,86 +8,87 @@
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="HelveticaNeue.ttc">
-            <string>HelveticaNeue-Bold</string>
-            <string>HelveticaNeue-Bold</string>
-            <string>HelveticaNeue</string>
-            <string>HelveticaNeue-Medium</string>
-            <string>HelveticaNeue</string>
-            <string>HelveticaNeue</string>
-            <string>HelveticaNeue</string>
-            <string>HelveticaNeue</string>
-            <string>HelveticaNeue</string>
-            <string>HelveticaNeue</string>
-            <string>HelveticaNeue</string>
-            <string>HelveticaNeue</string>
-            <string>HelveticaNeue-Medium</string>
-            <string>HelveticaNeue</string>
-            <string>HelveticaNeue</string>
-            <string>HelveticaNeue</string>
-            <string>HelveticaNeue</string>
-            <string>HelveticaNeue</string>
-            <string>HelveticaNeue</string>
-            <string>HelveticaNeue-Medium</string>
-            <string>HelveticaNeue</string>
-            <string>HelveticaNeue-Medium</string>
-            <string>HelveticaNeue</string>
-            <string>HelveticaNeue</string>
-            <string>HelveticaNeue-Medium</string>
-            <string>HelveticaNeue</string>
-            <string>HelveticaNeue</string>
-            <string>HelveticaNeue-Medium</string>
-            <string>HelveticaNeue-Medium</string>
-            <string>HelveticaNeue</string>
-            <string>HelveticaNeue</string>
-            <string>HelveticaNeue</string>
-            <string>HelveticaNeue</string>
-            <string>HelveticaNeue</string>
-            <string>HelveticaNeue-Medium</string>
-            <string>HelveticaNeue</string>
-            <string>HelveticaNeue</string>
-            <string>HelveticaNeue</string>
-            <string>HelveticaNeue</string>
-            <string>HelveticaNeue</string>
-            <string>HelveticaNeue</string>
-            <string>HelveticaNeue</string>
-            <string>HelveticaNeue</string>
-            <string>HelveticaNeue</string>
-            <string>HelveticaNeue-Medium</string>
-            <string>HelveticaNeue-Medium</string>
-            <string>HelveticaNeue</string>
-            <string>HelveticaNeue-Medium</string>
-            <string>HelveticaNeue</string>
-            <string>HelveticaNeue</string>
-            <string>HelveticaNeue</string>
-            <string>HelveticaNeue-Medium</string>
-            <string>HelveticaNeue-Medium</string>
-            <string>HelveticaNeue-Medium</string>
-            <string>HelveticaNeue</string>
-            <string>HelveticaNeue</string>
-            <string>HelveticaNeue</string>
-            <string>HelveticaNeue-Medium</string>
-            <string>HelveticaNeue</string>
-            <string>HelveticaNeue</string>
-            <string>HelveticaNeue</string>
-            <string>HelveticaNeue</string>
-            <string>HelveticaNeue</string>
-            <string>HelveticaNeue</string>
-            <string>HelveticaNeue</string>
-            <string>HelveticaNeue</string>
-            <string>HelveticaNeue</string>
-            <string>HelveticaNeue</string>
-            <string>HelveticaNeue</string>
-            <string>HelveticaNeue</string>
-            <string>HelveticaNeue</string>
-            <string>HelveticaNeue</string>
-            <string>HelveticaNeue</string>
             <string>HelveticaNeue</string>
             <string>HelveticaNeue-Bold</string>
             <string>HelveticaNeue</string>
+            <string>HelveticaNeue-Medium</string>
+            <string>HelveticaNeue-Medium</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue-Medium</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue-Medium</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue-Medium</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue-Medium</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue-Medium</string>
+            <string>HelveticaNeue-Medium</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue-Medium</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue-Medium</string>
+            <string>HelveticaNeue-Medium</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue-Medium</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue-Medium</string>
+            <string>HelveticaNeue-Medium</string>
+            <string>HelveticaNeue-Medium</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue-Medium</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue-Bold</string>
+            <string>HelveticaNeue</string>
             <string>HelveticaNeue-Bold</string>
             <string>HelveticaNeue-Medium</string>
             <string>HelveticaNeue-Medium</string>
-            <string>HelveticaNeue-Medium</string>
+            <string>HelveticaNeue</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -114,6 +115,13 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jme-rJ-Hx1">
+                                                    <rect key="frame" x="8" y="5" width="50" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="50" id="VTR-hV-qUj"/>
+                                                        <constraint firstAttribute="height" constant="50" id="kbh-Rd-uGX"/>
+                                                    </constraints>
+                                                </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yds-Em-KIe" userLabel="Separator">
                                                     <rect key="frame" x="0.0" y="59" width="600" height="1"/>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -121,12 +129,12 @@
                                                         <constraint firstAttribute="height" constant="1" id="voO-5E-whW"/>
                                                     </constraints>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zCl-Of-Pvk" userLabel="Product Name">
-                                                    <rect key="frame" x="8" y="10" width="447" height="40"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zCl-Of-Pvk" userLabel="Product Name">
+                                                    <rect key="frame" x="68" y="0.0" width="524" height="15"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="40" id="OT3-TW-JXW"/>
+                                                        <constraint firstAttribute="height" constant="15" id="B1Z-2z-SN9"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="12"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -170,7 +178,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VhF-PV-5cy" userLabel="Plus">
-                                                    <rect key="frame" x="515" y="10" width="40" height="40"/>
+                                                    <rect key="frame" x="515" y="22" width="40" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="915-4y-yMh"/>
                                                         <constraint firstAttribute="height" constant="40" id="Zj6-eh-c7p"/>
@@ -190,7 +198,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j6U-kC-bZw" userLabel="Minus">
-                                                    <rect key="frame" x="470" y="10" width="40" height="40"/>
+                                                    <rect key="frame" x="470" y="22" width="40" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="40" id="R1L-9E-0cc"/>
                                                         <constraint firstAttribute="height" constant="40" id="b5v-b1-163"/>
@@ -202,7 +210,7 @@
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4HK-Wl-nvf">
-                                                    <rect key="frame" x="502" y="19" width="25" height="21"/>
+                                                    <rect key="frame" x="502" y="31.5" width="25" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="nfd-ZO-OLI"/>
                                                         <constraint firstAttribute="width" constant="25" id="u5x-xk-e3p"/>
@@ -211,25 +219,39 @@
                                                     <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iwr-eT-pQg" userLabel="Price">
+                                                    <rect key="frame" x="436" y="15" width="111" height="15"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="111" id="0pj-69-ilu"/>
+                                                        <constraint firstAttribute="height" constant="15" id="wmy-x3-Pnv"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="VhF-PV-5cy" firstAttribute="centerY" secondItem="DhK-Tc-qID" secondAttribute="centerY" id="3jj-86-goX"/>
+                                                <constraint firstAttribute="trailing" secondItem="zCl-Of-Pvk" secondAttribute="trailing" constant="8" id="3En-zw-r4e"/>
+                                                <constraint firstItem="VhF-PV-5cy" firstAttribute="centerY" secondItem="DhK-Tc-qID" secondAttribute="centerY" constant="12" id="3jj-86-goX"/>
                                                 <constraint firstItem="FFW-Ks-64Y" firstAttribute="leading" secondItem="4HK-Wl-nvf" secondAttribute="trailing" constant="28" id="3rL-ow-4x3"/>
                                                 <constraint firstItem="anS-Tb-Pmt" firstAttribute="centerY" secondItem="DhK-Tc-qID" secondAttribute="centerY" id="AkC-Zf-vu9"/>
+                                                <constraint firstItem="iwr-eT-pQg" firstAttribute="top" secondItem="zCl-Of-Pvk" secondAttribute="bottom" id="Azo-hO-E19"/>
                                                 <constraint firstItem="VhF-PV-5cy" firstAttribute="leading" secondItem="j6U-kC-bZw" secondAttribute="trailing" constant="5" id="DXY-3E-fBB"/>
                                                 <constraint firstAttribute="trailing" secondItem="yds-Em-KIe" secondAttribute="trailing" id="Gle-Ht-2kZ"/>
-                                                <constraint firstItem="FFW-Ks-64Y" firstAttribute="leading" secondItem="zCl-Of-Pvk" secondAttribute="trailing" constant="100" id="IkS-ui-om5"/>
                                                 <constraint firstAttribute="bottom" secondItem="yds-Em-KIe" secondAttribute="bottom" id="RcU-tS-3Lj"/>
+                                                <constraint firstItem="Jme-rJ-Hx1" firstAttribute="centerY" secondItem="DhK-Tc-qID" secondAttribute="centerY" id="Tq2-e6-qvj"/>
                                                 <constraint firstItem="FFW-Ks-64Y" firstAttribute="leading" secondItem="VhF-PV-5cy" secondAttribute="trailing" id="b44-6u-Rnj"/>
                                                 <constraint firstItem="VhF-PV-5cy" firstAttribute="leading" secondItem="4HK-Wl-nvf" secondAttribute="trailing" constant="-10" id="cz0-S3-vV0"/>
-                                                <constraint firstItem="j6U-kC-bZw" firstAttribute="centerY" secondItem="DhK-Tc-qID" secondAttribute="centerY" id="dPT-Oa-9Er"/>
-                                                <constraint firstItem="zCl-Of-Pvk" firstAttribute="centerY" secondItem="DhK-Tc-qID" secondAttribute="centerY" id="h2o-HI-JmV"/>
-                                                <constraint firstItem="4HK-Wl-nvf" firstAttribute="centerY" secondItem="DhK-Tc-qID" secondAttribute="centerY" id="jgs-yX-mTM"/>
+                                                <constraint firstItem="j6U-kC-bZw" firstAttribute="centerY" secondItem="DhK-Tc-qID" secondAttribute="centerY" constant="12" id="dPT-Oa-9Er"/>
+                                                <constraint firstItem="4HK-Wl-nvf" firstAttribute="centerY" secondItem="DhK-Tc-qID" secondAttribute="centerY" constant="12" id="jgs-yX-mTM"/>
+                                                <constraint firstItem="zCl-Of-Pvk" firstAttribute="top" secondItem="DhK-Tc-qID" secondAttribute="top" id="nev-nQ-t1U"/>
+                                                <constraint firstItem="FFW-Ks-64Y" firstAttribute="leading" secondItem="iwr-eT-pQg" secondAttribute="trailing" constant="8" id="nrx-nM-YnS"/>
                                                 <constraint firstItem="yds-Em-KIe" firstAttribute="leading" secondItem="DhK-Tc-qID" secondAttribute="leading" id="oFx-DG-Rke"/>
+                                                <constraint firstItem="zCl-Of-Pvk" firstAttribute="leading" secondItem="Jme-rJ-Hx1" secondAttribute="trailing" constant="10" id="pet-32-0Kx"/>
+                                                <constraint firstItem="Jme-rJ-Hx1" firstAttribute="leading" secondItem="DhK-Tc-qID" secondAttribute="leading" constant="8" id="pwM-iw-zDe"/>
                                                 <constraint firstAttribute="trailing" secondItem="FFW-Ks-64Y" secondAttribute="trailing" constant="5" id="rip-Lp-5e4"/>
                                                 <constraint firstItem="FFW-Ks-64Y" firstAttribute="centerY" secondItem="DhK-Tc-qID" secondAttribute="centerY" id="sOP-tc-yoy"/>
                                                 <constraint firstAttribute="trailing" secondItem="anS-Tb-Pmt" secondAttribute="trailing" constant="11" id="vgR-2c-ZKd"/>
-                                                <constraint firstItem="zCl-Of-Pvk" firstAttribute="leading" secondItem="DhK-Tc-qID" secondAttribute="leadingMargin" id="yaU-Q0-y9G"/>
                                                 <constraint firstItem="VhF-PV-5cy" firstAttribute="leading" secondItem="j6U-kC-bZw" secondAttribute="trailing" constant="10" id="ymf-Uf-Qty"/>
                                             </constraints>
                                             <variation key="default">
@@ -242,6 +264,8 @@
                                         <connections>
                                             <outlet property="lblProductName" destination="zCl-Of-Pvk" id="10f-M1-Xc0"/>
                                             <outlet property="lblQuantity" destination="4HK-Wl-nvf" id="sHg-sQ-Rj8"/>
+                                            <outlet property="priceLabel" destination="iwr-eT-pQg" id="WlS-PI-Boo"/>
+                                            <outlet property="productImageLabel" destination="Jme-rJ-Hx1" id="D5W-e8-4w9"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

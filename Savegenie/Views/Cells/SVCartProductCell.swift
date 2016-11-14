@@ -20,6 +20,8 @@ class SVCartProductCell: UITableViewCell {
 
     @IBOutlet weak var lblProductName:UILabel!
     @IBOutlet weak var lblQuantity:UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var productImageLabel: UIImageView!
     
     weak var delegate:SVCartProductCellDelegate? = nil
     var productDB:SVCartProduct? = nil
@@ -89,6 +91,13 @@ class SVCartProductCell: UITableViewCell {
         self.productDB = product
         self.lblProductName.text = product.skuName
         self.lblQuantity.text = product.count
+        self.priceLabel.text = ""
+        if let price = product.mrp {
+            self.priceLabel.text = "Rs \(price)"
+        }
+        
+        let product1 = SVCoreDataManager.getProductsWithIds([product.skuID!])?.first
+        productImageLabel.setImageWithURL(SVUtil.productImageURL((product1?.image)!))
         
     }
 
