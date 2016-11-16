@@ -491,7 +491,7 @@
                                                     <rect key="frame" x="0.0" y="90" width="580" height="9"/>
                                                     <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                                                 </view>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="openpromo" translatesAutoresizingMaskIntoConstraints="NO" id="gfW-s0-aNo">
+                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="openpromo" translatesAutoresizingMaskIntoConstraints="NO" id="gfW-s0-aNo">
                                                     <rect key="frame" x="0.0" y="0.0" width="70" height="16"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="16" id="ImK-oz-H6B"/>
@@ -510,10 +510,10 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OFFER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NEf-xu-XiT">
-                                                    <rect key="frame" x="0.0" y="2" width="90" height="15"/>
+                                                    <rect key="frame" x="2" y="2" width="86" height="15"/>
                                                     <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="90" id="MMy-EW-ZFh"/>
+                                                        <constraint firstAttribute="width" constant="86" id="MMy-EW-ZFh"/>
                                                         <constraint firstAttribute="height" constant="15" id="tsg-qq-lqq"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>

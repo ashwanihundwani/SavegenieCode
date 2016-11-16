@@ -142,23 +142,28 @@ class SVProductListViewController: SVBaseViewController, UITableViewDataSource, 
     }
     
     func getOfferForProduct(product: Product) -> Bool {
-        let coupons = SVDeals.getCurrentDeals()?.coupons
+        let deals = SVDeals.getCurrentDeals()?.deals
         var totalOfferProduct = Array<String>()
-        if let _ = coupons {
-            for promo in coupons! {
+        if let _ = deals {
+            for promo in deals! {
                 
-                
-                if let buyPIds = promo.buyProductIds {
-                    for pId in buyPIds {
-                        totalOfferProduct.append(pId)
+                for dealProd in promo.dealProducts {
+                    if let pid = dealProd.product_skus_id {
+                        totalOfferProduct.append(pid)
                     }
                 }
                 
-                if let getPIds = promo.getProductIds {
-                    for pId in getPIds {
-                        totalOfferProduct.append(pId)
-                    }
-                }
+//                if let buyPIds = promo.buyProductIds {
+//                    for pId in buyPIds {
+//                        totalOfferProduct.append(pId)
+//                    }
+//                }
+//                
+//                if let getPIds = promo.getProductIds {
+//                    for pId in getPIds {
+//                        totalOfferProduct.append(pId)
+//                    }
+//                }
             }
         }
         
